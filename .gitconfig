@@ -1,0 +1,19 @@
+[user]
+	name = Guilherme Ceolin
+	email = guiceolin@gmail.com
+[color]
+	ui = auto
+[core]
+	pager = less -R
+        excludesfile = ~/.gitignore
+[push]
+       default = tracking
+
+[diff "odf"]
+        textconv = odt2txt
+
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+

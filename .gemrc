@@ -1,0 +1,14 @@
+--- 
+gemcutter_key: 66...cf
+update: --env-shebang
+:backtrace: false
+:benchmark: false
+install: --env-shebang
+:verbose: true
+gem: --no-ri --no-rdoc
+:sources: 
+- http://gems.github.com/
+- http://rubygems.org
+:bulk_threshold: 1000
+:update_sources: true
+

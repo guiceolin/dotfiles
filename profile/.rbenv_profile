@@ -1,0 +1,6 @@
+#rbenv Binaries.
+PATH=$PATH:~/.rbenv/bin
+
+#Ferramentas para o rbenv
+eval "$(rbenv init -)"
+

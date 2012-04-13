@@ -1,0 +1,9 @@
+*.swp
+.rvmrc
+.DS_Store
+nbproject/*
+*.swo
+.sass-cache/
+vendor/cache
+.rbenv-version
+
