@@ -21,5 +21,5 @@ export IRBRC="~/.ruby-console/_irbrc"
 export PATH=${PATH}
 
 # Export VIM dir
-export VIMRUNTIME="$DIR/dotvim/"
-export VIM="$DIR/dotvim/"
+#export VIMRUNTIME="$DIR/dotvim/"
+#export VIM="$DIR/dotvim/"
