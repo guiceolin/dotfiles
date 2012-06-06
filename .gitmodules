@@ -1,6 +1,3 @@
-[submodule "dotvim/bundle/command-t"]
-	path = dotvim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
 [submodule "dotvim/bundle/nerdtree"]
 	path = dotvim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree.git
