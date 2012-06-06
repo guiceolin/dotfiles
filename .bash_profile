@@ -3,7 +3,7 @@ while [ -h "$SOURCE" ] ; do SOURCE="$(readlink "$SOURCE")"; done
 DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 #Git completation on bash terminal
-source ~/.git-completion.bash
+source ${DIR}/GIT/.git-completion.bash
 
 # Git configuration
 source ${DIR}/profile/.git_profile
@@ -21,5 +21,5 @@ export IRBRC="~/.ruby-console/_irbrc"
 export PATH=${PATH}
 
 # Export VIM dir
-#export VIMRUNTIME="$DIR/dotvim/"
-#export VIM="$DIR/dotvim/"
+export VIMRUNTIME="$DIR/dotvim/"
+export VIM="$DIR/dotvim/"
