@@ -5,6 +5,11 @@ all: git-install vim-install ruby-install
 clean: git-clean vim-clean ruby-clean
 force: clean all
 
+linux: all
+	echo 'source ${CURDIR}/.bash_profile' >> ~/.bashrc
+macosx: all
+	echo 'source ${CURDIR}/.bash_profile' >> ~/.bash_profile
+
 git-install:
 	ln -s ${GITDIR}/.gitconfig ~/.gitconfig
 	ln -s ${GITDIR}/.gitignore ~/.gitignore
