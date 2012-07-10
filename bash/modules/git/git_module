@@ -1,2 +1,3 @@
-source $(__modules_dir)/git/lib/git-completion.bash
-source $(__modules_dir)/git/lib/functions.bash
+source ${CURRENT_MODULE}/lib/git-completion.bash
+source ${CURRENT_MODULE}/lib/functions.bash
+

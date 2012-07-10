@@ -16,6 +16,7 @@ function __load_modules ()
   MODULES=$(__current_dir)/modules/**/*_module
   for m in $MODULES
   do
+    CURRENT_MODULE="$( dirname $m )"
     source $m
   done
 }
