@@ -6,21 +6,21 @@ clean: git-clean vim-clean ruby-clean
 force: clean all
 
 linux: all
-	echo 'source ${CURDIR}/.bash_profile' >> ~/.bashrc
+	echo 'source ${CURDIR}/profile/bash_profile' >> ~/.bashrc
 macosx: all
-	echo 'source ${CURDIR}/.bash_profile' >> ~/.bash_profile
+	echo 'source ${CURDIR}/profile/bash_profile' >> ~/.bash_profile
 
 git-install:
-	ln -s ${GITDIR}/.gitconfig ~/.gitconfig
-	ln -s ${GITDIR}/.gitignore ~/.gitignore
+	ln -s ${GITDIR}/gitconfig ~/.gitconfig
+	ln -s ${GITDIR}/gitignore ~/.gitignore
 
 git-clean:
 	rm -f ~/.gitconfig
 	rm -f ~/.gitignore
 
 ruby-install:
-	ln -s ${RUBYDIR}/.gemrc ~/.gemrc
-	ln -s ${RUBYDIR}/.irbrc ~/.irbrc
+	ln -s ${RUBYDIR}/gemrc ~/.gemrc
+	ln -s ${RUBYDIR}/irbrc ~/.irbrc
 ruby-clean:
 	rm -f ~/.irbrc
 	rm -f ~/.gemrc
