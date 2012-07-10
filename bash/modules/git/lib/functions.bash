@@ -17,7 +17,3 @@ function __repo_dirty ()
   git status 2>/dev/null | grep "working directory clean" >/dev/null || perl -e 'print "* "'
 }
 
-#Configura o editor padrão do git
-export GIT_EDITOR="mvim"
-
-

@@ -1,0 +1,2 @@
+source $(__modules_dir)/git/lib/git-completion.bash
+source $(__modules_dir)/git/lib/functions.bash

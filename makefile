@@ -6,9 +6,11 @@ clean: git-clean vim-clean ruby-clean
 force: clean all
 
 linux: all
-	echo 'source ${CURDIR}/profile/bash_profile' >> ~/.bashrc
+	echo 'source ${CURDIR}/bash/lib.bash' >> ~/.bashrc
+	echo 'source ${CURDIR}/bash/bash_profile' >> ~/.bashrc
 macosx: all
-	echo 'source ${CURDIR}/profile/bash_profile' >> ~/.bash_profile
+	echo 'source ${CURDIR}/bash/lib.bash' >> ~/.bash_profile
+	echo 'source ${CURDIR}/bash/bash_profile' >> ~/.bash_profile
 
 git-install:
 	ln -s ${GITDIR}/gitconfig ~/.gitconfig

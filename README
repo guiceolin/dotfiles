@@ -1,0 +1,6 @@
+FILES=/home/gceolin/dotfiles/bash/**/*_profile
+for f in $FILES
+do
+  echo "FILE: $f"
+done
+ls $(__current_dir)/GIT
