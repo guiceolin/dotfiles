@@ -1,2 +1,3 @@
 #Configura o editor padrão do git
 export GIT_EDITOR="mvim"
+export EDITOR="mvim"
