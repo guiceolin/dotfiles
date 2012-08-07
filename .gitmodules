@@ -79,3 +79,6 @@
 [submodule "dotvim/bundle/webapi-vim"]
 	path = dotvim/bundle/webapi-vim
 	url = https://github.com/mattn/webapi-vim.git
+[submodule "dotvim/bundle/handlebars"]
+	path = dotvim/bundle/handlebars
+	url = git://github.com/nono/vim-handlebars.git
