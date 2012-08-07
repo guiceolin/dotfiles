@@ -17,3 +17,5 @@
 	co = checkout
 	ci = commit
 
+[github]
+	user = guiceolin
