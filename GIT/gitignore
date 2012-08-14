@@ -7,3 +7,5 @@ nbproject/*
 vendor/cache
 .rbenv-version
 
+coverage/
+.bundle/
