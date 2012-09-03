@@ -4,12 +4,6 @@
 [submodule "dotvim/bundle/vim-rails"]
 	path = dotvim/bundle/vim-rails
 	url = git://github.com/tpope/vim-rails.git
-[submodule "dotvim/bundle/snipmate.vim"]
-	path = dotvim/bundle/snipmate.vim
-	url = git://github.com/msanders/snipmate.vim.git
-[submodule "dotvim/snippets"]
-	path = dotvim/snippets
-	url = https://github.com/scrooloose/snipmate-snippets.git
 [submodule "dotvim/bundle/nerdcommenter"]
 	path = dotvim/bundle/nerdcommenter
 	url = https://github.com/scrooloose/nerdcommenter.git
