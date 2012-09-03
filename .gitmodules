@@ -76,3 +76,15 @@
 [submodule "dotvim/bundle/handlebars"]
 	path = dotvim/bundle/handlebars
 	url = git://github.com/nono/vim-handlebars.git
+[submodule "dotvim/bundle/vim-snipmate"]
+	path = dotvim/bundle/vim-snipmate
+	url = git://github.com/garbas/vim-snipmate.git
+[submodule "dotvim/bundle/tlib"]
+	path = dotvim/bundle/tlib
+	url = git://github.com/tomtom/tlib_vim.git
+[submodule "dotvim/bundle/vim-addon-mw-utils"]
+	path = dotvim/bundle/vim-addon-mw-utils
+	url = git://github.com/MarcWeber/vim-addon-mw-utils.git
+[submodule "dotvim/bundle/snipmate-snippets"]
+	path = dotvim/bundle/snipmate-snippets
+	url = git://github.com/honza/snipmate-snippets.git
