@@ -20,3 +20,21 @@ function __load_modules ()
     source $m
   done
 }
+function __load_modules_path ()
+{
+  PATHS=$(__current_dir)/modules/**/PATH
+  for m in $PATHS
+  do
+    CURRENT_MODULE="$( dirname $m )"
+    source $m
+  done
+}
+function __load_modules_ps1 ()
+{
+  _PS1=$(__current_dir)/modules/**/PS1
+  for m in $_PS1
+  do
+    CURRENT_MODULE="$( dirname $m )"
+    source $m
+  done
+}
