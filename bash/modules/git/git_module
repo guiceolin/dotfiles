@@ -1,3 +1,6 @@
 source ${CURRENT_MODULE}/lib/git-completion.bash
 source ${CURRENT_MODULE}/lib/functions.bash
 
+#Configura o editor padrão do git
+export GIT_EDITOR="mvim"
+export EDITOR="mvim"
