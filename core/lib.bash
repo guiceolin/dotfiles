@@ -8,12 +8,12 @@ function __current_dir ()
 
 function __modules_dir ()
 {
-  printf $(__current_dir)/modules/
+  printf $(__current_dir)/../modules_enabled/
 }
 
 function __load_modules ()
 {
-  MODULES=$(__current_dir)/modules/**/*_module
+  MODULES=$(__current_dir)/../modules_enabled/**/*_module
   for m in $MODULES
   do
     CURRENT_MODULE="$( dirname $m )"
@@ -22,17 +22,8 @@ function __load_modules ()
 }
 function __load_modules_path ()
 {
-  PATHS=$(__current_dir)/modules/**/PATH
+  PATHS=$(__current_dir)/../modules_enabled/**/PATH
   for m in $PATHS
-  do
-    CURRENT_MODULE="$( dirname $m )"
-    source $m
-  done
-}
-function __load_modules_ps1 ()
-{
-  _PS1=$(__current_dir)/modules/**/PS1
-  for m in $_PS1
   do
     CURRENT_MODULE="$( dirname $m )"
     source $m
