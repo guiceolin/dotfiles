@@ -1,7 +1,7 @@
 GITDIR=$(CURDIR)/GIT
 VIMDIR=$(CURDIR)/dotvim
 RUBYDIR=$(CURDIR)/RUBY
-all: git-install vim-install ruby-install
+all: git vim ruby
 clean: git-clean vim-clean ruby-clean
 force: clean all
 
@@ -12,7 +12,7 @@ macosx: all
 	echo 'source ${CURDIR}/bash/lib.bash' >> ~/.bash_profile
 	echo 'source ${CURDIR}/bash/bash_profile' >> ~/.bash_profile
 
-git-install:
+git:
 	ln -s ${GITDIR}/gitconfig ~/.gitconfig
 	ln -s ${GITDIR}/gitignore ~/.gitignore
 
@@ -20,13 +20,14 @@ git-clean:
 	rm -f ~/.gitconfig
 	rm -f ~/.gitignore
 
-ruby-install:
+ruby:
 	ln -s ${RUBYDIR}/gemrc ~/.gemrc
 	ln -s ${RUBYDIR}/irbrc ~/.irbrc
 ruby-clean:
 	rm -f ~/.irbrc
 	rm -f ~/.gemrc
-vim-install:
+
+vim:
 	ln -s ${VIMDIR} ~/.vim
 	ln -s ${VIMDIR}/vimrc ~/.vimrc
 vim-clean:
