@@ -1,4 +1,1 @@
-#rbenv Binaries.
-PATH=$PATH:~/.rbenv/bin
-
 export PATH=${PATH}

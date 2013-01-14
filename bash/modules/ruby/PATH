@@ -1,0 +1,4 @@
+#rbenv Binaries.
+PATH=$PATH:~/.rbenv/bin
+
+
