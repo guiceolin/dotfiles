@@ -61,6 +61,6 @@ else:
   bashrc = home + '/.bashrc'
 
 with open(bashrc, 'a') as myfile:
-  myfile.write('# DOTFILES SOURCE #')
-  myfile.write('source ' + current_dir + '/bash/lib.bash\n')
-  myfile.write('source ' + current_dir + '/bash/bash_profile\n')
+  myfile.write('\n# DOTFILES SOURCE #\n')
+  myfile.write('source ' + current_dir + '/core/lib.bash\n')
+  myfile.write('source ' + current_dir + '/core/bash_profile\n')
