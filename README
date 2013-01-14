@@ -1,6 +1,17 @@
-FILES=/home/gceolin/dotfiles/bash/**/*_profile
-for f in $FILES
-do
-  echo "FILE: $f"
-done
-ls $(__current_dir)/GIT
+# Guiceolin's Dotfiles
+
+This is my dotfiles, feel free to use :P
+
+## Usage:
+
+    $ cd ~
+    $ git clone git://github.com/guiceolin/dotfiles.git
+    $ cd dotfiles
+    $ ./install
+
+## Contribute
+
+Find a bug? any sugestion?
+
+Just clone, do what you have to do, and make a pull request!
+
