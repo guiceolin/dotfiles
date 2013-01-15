@@ -2,65 +2,123 @@
 #! /usr/bin/env python
 import argparse
 import os
+import mmap
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
 parser = argparse.ArgumentParser(description='Install DotFiles')
-parser.add_argument('--skip-git',  action='store_true', help='Skip dotfiles for git.')
-parser.add_argument('--skip-ruby', action='store_true', help='Skip dotfiles for ruby.')
-parser.add_argument('--skip-vim',  action='store_true', help='Skip dotfiles for vim.')
+#parser.add_argument('--skip-git',  action='store_true', help='Skip dotfiles for git.')
+#parser.add_argument('--skip-ruby', action='store_true', help='Skip dotfiles for ruby.')
+#parser.add_argument('--skip-vim',  action='store_true', help='Skip dotfiles for vim.')
 parser.add_argument('--macosx',    action='store_true', help='MacOSX version.')
 parser.add_argument('-v','--verbose', dest='verbose', action='store_true', help='Verbose mode.')
+
+subparsers = parser.add_subparsers(help='sub-command help')
+
+parser_module = subparsers.add_parser('module', help='a help')
+parser_module.add_argument('name', help='Name of module to install')
+
 args = parser.parse_args()
 
-home = os.getenv("HOME")
-def log(msg):
-  if args.verbose:
-    print msg
+class Logger:
+  verbose = False
+  def __init__(self, verbose=False):
+    self.verbose = verbose
 
-def create_git_links():
-  if not os.path.exists(home +'/.gitconfig'):
-    os.symlink(current_dir + '/GIT/gitconfig', home + '/.gitconfig')
-  else:
-    log("gitconfig already exists, skipping...")
-  if not os.path.exists(home+'/.gitignore'):
-    os.symlink(current_dir + '/GIT/gitignore',home + '/.gitignore')
-  else:
-    log("gitignore already exists, skipping...")
+  def log(self, msg):
+    if self.verbose:
+      print(msg),
 
-def create_ruby_links():
-  if not os.path.exists(home+'/.gemrc'):
-    os.symlink(current_dir + '/RUBY/gemrc', home + '/.gemrc')
-  else:
-      log('gemrc already exists, skipping...')
-  if not os.path.exists(home + '/.irbrc'):
-    os.symlink(current_dir + '/RUBY/irbrc', home + '/.irbrc')
-  else:
-    log('irbrc already exists, skipping...')
+logger = Logger(verbose=args.verbose)
 
-def create_vim_links():
-  if not os.path.exists(home + '/.vim'):
-    os.symlink(current_dir + '/dotvim/', home + '/vim')
-  else:
-    log('vim directory alread exists, skipping...')
-  if not os.path.exists(home + '/.vimrc'):
-    os.symlink(current_dir + "dotvim/vimrc", home + '/.vimrc')
-  else:
-    log('vimrc already exists, skipping...')
+class ModuleInstaller:
+  @staticmethod
+  def install(name):
+    enabled_path = current_dir + '/modules_enabled/' + name
+    if not os.path.exists(enabled_path):
+      logger.log("installing " + name + " module...")
+      os.symlink(current_dir + '/modules_available/' + name, enabled_path )
+      logger.log(' done!\n')
+    else:
+      logger.log(name +" module already installed, skipping...\n")
 
-if not args.skip_git:
-  create_git_links()
-if not args.skip_ruby:
-  create_ruby_links()
-if not args.skip_ruby:
-  create_vim_links()
+class CoreInstaller:
+  @staticmethod
+  def install(macosx=False):
+    home = os.getenv("HOME")
+    if macosx:
+      bashrc_path = home + '/.bash_profile'
+    else:
+      bashrc_path = home + '/.bashrc'
 
-if args.macosx:
-  bashrc = home + '/.bash_profile'
-else:
-  bashrc = home + '/.bashrc'
+    bashrc_file = open(bashrc_path, 'r')
+    bashrc = bashrc_file.readlines()
+    bashrc_file.close()
+    found = False
+    for line in bashrc:
+      if str('# DOTFILES SOURCE #\n') in line:
+        found = True
 
-with open(bashrc, 'a') as myfile:
-  myfile.write('\n# DOTFILES SOURCE #\n')
-  myfile.write('source ' + current_dir + '/core/lib.bash\n')
-  myfile.write('source ' + current_dir + '/core/bash_profile\n')
+    if not found:
+      with open(bashrc_path, 'a') as f:
+        logger.log("Installing CORE...")
+        f.write('\n# DOTFILES SOURCE #\n')
+        f.write('source ' + current_dir + '/core/lib.bash\n')
+        f.write('source ' + current_dir + '/core/bash_profile\n')
+        logger.log(" Done!\n")
+    else:
+      logger.log("CORE already installed, skipping...\n")
+
+
+print args
+CoreInstaller.install(args.macosx)
+if args.name:
+  ModuleInstaller.install(args.name)
+
+
+#def create_git_links():
+#  if not os.path.exists(home +'/.gitconfig'):
+#    os.symlink(current_dir + '/GIT/gitconfig', home + '/.gitconfig')
+#  else:
+#    log("gitconfig already exists, skipping...")
+#  if not os.path.exists(home+'/.gitignore'):
+#    os.symlink(current_dir + '/GIT/gitignore',home + '/.gitignore')
+#  else:
+#    log("gitignore already exists, skipping...")
+#
+#def create_ruby_links():
+#  if not os.path.exists(home+'/.gemrc'):
+#    os.symlink(current_dir + '/RUBY/gemrc', home + '/.gemrc')
+#  else:
+#      log('gemrc already exists, skipping...')
+#  if not os.path.exists(home + '/.irbrc'):
+#    os.symlink(current_dir + '/RUBY/irbrc', home + '/.irbrc')
+#  else:
+#    log('irbrc already exists, skipping...')
+#
+#def create_vim_links():
+#  if not os.path.exists(home + '/.vim'):
+#    os.symlink(current_dir + '/dotvim/', home + '/vim')
+#  else:
+#    log('vim directory alread exists, skipping...')
+#  if not os.path.exists(home + '/.vimrc'):
+#    os.symlink(current_dir + "dotvim/vimrc", home + '/.vimrc')
+#  else:
+#    log('vimrc already exists, skipping...')
+
+#if not args.skip_git:
+#  create_git_links()
+#if not args.skip_ruby:
+#  create_ruby_links()
+#if not args.skip_ruby:
+#  create_vim_links()
+
+#if args.macosx:
+#  bashrc = home + '/.bash_profile'
+#else:
+#  bashrc = home + '/.bashrc'
+
+#with open(bashrc, 'a') as myfile:
+#  myfile.write('\n# DOTFILES SOURCE #\n')
+#  myfile.write('source ' + current_dir + '/core/lib.bash\n')
+#  myfile.write('source ' + current_dir + '/core/bash_profile\n')
