@@ -3,6 +3,7 @@
 import argparse
 import os
 import mmap
+import imp
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -35,12 +36,22 @@ class ModuleInstaller:
   @staticmethod
   def install(name):
     enabled_path = current_dir + '/modules_enabled/' + name
+
     if not os.path.exists(enabled_path):
-      logger.log("installing " + name + " module...")
-      os.symlink(current_dir + '/modules_available/' + name, enabled_path )
-      logger.log(' done!\n')
+      try:
+        logger.log("Installing '" + name + "' module...")
+        os.symlink(current_dir + '/modules_available/' + name, enabled_path )
+        plugin_install = imp.load_source('install', enabled_path + '/install.py')
+        plugin_install.install(enabled_path,logger)
+        logger.log(' done!\n')
+      except IOError:
+        logger.log("\nInstall.py not found on " + name + " module, skipping... Done!")
+      except AttributeError:
+        logger.log("\nERROR: Install method not found in '" + name + "' module installation script!")
+        logger.log("\nERROR: '" + name + "' module may not work properly.")
+
     else:
-      logger.log(name +" module already installed, skipping...\n")
+      logger.log("'" + name +"' module already installed, skipping...\n")
 
 class CoreInstaller:
   @staticmethod
@@ -77,15 +88,6 @@ if args.name:
 
 
 #def create_git_links():
-#  if not os.path.exists(home +'/.gitconfig'):
-#    os.symlink(current_dir + '/GIT/gitconfig', home + '/.gitconfig')
-#  else:
-#    log("gitconfig already exists, skipping...")
-#  if not os.path.exists(home+'/.gitignore'):
-#    os.symlink(current_dir + '/GIT/gitignore',home + '/.gitignore')
-#  else:
-#    log("gitignore already exists, skipping...")
-#
 #def create_ruby_links():
 #  if not os.path.exists(home+'/.gemrc'):
 #    os.symlink(current_dir + '/RUBY/gemrc', home + '/.gemrc')
