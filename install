@@ -87,14 +87,6 @@ if args.name:
   ModuleInstaller.install(args.name)
 
 #def create_vim_links():
-#  if not os.path.exists(home + '/.vim'):
-#    os.symlink(current_dir + '/dotvim/', home + '/vim')
-#  else:
-#    log('vim directory alread exists, skipping...')
-#  if not os.path.exists(home + '/.vimrc'):
-#    os.symlink(current_dir + "dotvim/vimrc", home + '/.vimrc')
-#  else:
-#    log('vimrc already exists, skipping...')
 
 #if not args.skip_git:
 #  create_git_links()
