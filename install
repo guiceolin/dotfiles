@@ -86,18 +86,6 @@ CoreInstaller.install(args.macosx)
 if args.name:
   ModuleInstaller.install(args.name)
 
-
-#def create_git_links():
-#def create_ruby_links():
-#  if not os.path.exists(home+'/.gemrc'):
-#    os.symlink(current_dir + '/RUBY/gemrc', home + '/.gemrc')
-#  else:
-#      log('gemrc already exists, skipping...')
-#  if not os.path.exists(home + '/.irbrc'):
-#    os.symlink(current_dir + '/RUBY/irbrc', home + '/.irbrc')
-#  else:
-#    log('irbrc already exists, skipping...')
-#
 #def create_vim_links():
 #  if not os.path.exists(home + '/.vim'):
 #    os.symlink(current_dir + '/dotvim/', home + '/vim')
