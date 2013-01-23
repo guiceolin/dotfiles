@@ -4,6 +4,8 @@ import argparse
 import os
 import mmap
 import imp
+from lib.module_installer import ModuleInstaller
+from lib.logger import Logger
 
 current_dir = os.path.dirname(os.path.realpath(__file__))
 
@@ -21,35 +23,9 @@ parser_module.add_argument('name', help='Name of module to install')
 
 args = parser.parse_args()
 
-class Logger:
-  verbose = False
-  def __init__(self, verbose=False):
-    self.verbose = verbose
 
-  def log(self, msg):
-    if self.verbose:
-      print(msg),
 
 logger = Logger(verbose=args.verbose)
-
-class ModuleInstaller:
-  @staticmethod
-  def install(name):
-    home = os.getenv('HOME')
-    enabled_path = current_dir + '/modules_enabled/' + name
-
-    if not os.path.exists(enabled_path):
-      logger.log("Installing '" + name + "' module...")
-      os.symlink(current_dir + '/modules_available/' + name, enabled_path )
-      files = os.listdir(enabled_path + '/home/')
-      for f in files:
-        if not os.path.exists(home + '/' + f ):
-          os.symlink(enabled_path + '/home/' + f, home + '/' + f)
-        else:
-          log("\n'" + f + "' already exists, skipping...")
-      logger.log(' done!\n')
-    else:
-      logger.log("'" + name +"' module already installed, skipping...\n")
 
 class CoreInstaller:
   @staticmethod
@@ -79,6 +55,6 @@ class CoreInstaller:
       logger.log("CORE already installed, skipping...\n")
 
 
-print args
 CoreInstaller.install(args.macosx)
-ModuleInstaller.install(args.name)
+module_installer = ModuleInstaller(args.name, current_dir, logger)
+module_installer.install()
