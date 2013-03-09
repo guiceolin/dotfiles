@@ -21,7 +21,7 @@ Bundle 'ctrlp.vim'
 
 " UI Additions
 Bundle 'mutewinter/vim-indent-guides'
-Bundle 'Lokaltog/powerline', {'rtp': 'powerline/bindings/vim/'}
+Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rykka/colorv.vim'
 
 " Commands
