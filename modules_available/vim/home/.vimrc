@@ -17,6 +17,7 @@ Bundle 'gmarik/vundle'
 Bundle 'ZoomWin'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
+Bundle 'ctrlp.vim'
 
 " UI Additions
 Bundle 'mutewinter/vim-indent-guides'
@@ -193,8 +194,11 @@ inoremap <C-L> <C-O>:nohls<CR>
 "map to bufexplorer( MiniBufExplorer )
 nnoremap <leader>b :MiniBufExplorer<cr>
 
-"map to CommandT TextMate style finder
-nnoremap <leader>t :CommandT<CR>
+"map to Ctrlp style finder
+nnoremap <leader>t :CtrlP<CR>
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/]vendor[\/]',
+  \ }
 
 "map Q to something useful
 noremap Q gq
