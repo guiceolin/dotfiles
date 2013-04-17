@@ -1,5 +1,5 @@
 source ${CURRENT_MODULE}/lib/git-completion.bash
-source ${CURRENT_MODULE}/lib/functions.bash
+source ${CURRENT_MODULE}/lib/git-prompt.bash
 
 # Git Editor config
 if (( uname -s == 'Darwin' )); then
