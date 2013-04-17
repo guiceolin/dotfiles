@@ -1,6 +1,14 @@
 source ${CURRENT_MODULE}/lib/git-completion.bash
 source ${CURRENT_MODULE}/lib/functions.bash
 
-#Configura o editor padrão do git
-export GIT_EDITOR="mvim"
-export EDITOR="mvim"
+# Git Editor config
+if (( uname -s == 'Darwin' )); then
+  export GIT_EDITOR="mvim"
+  export EDITOR="mvim"
+elif (( uname -s == "Linux" )); then
+  export GIT_EDITOR="gvim"
+  export EDITOR="gvim"
+else
+  export GIT_EDITOR="vim"
+  export EDITOR="vim"
+fi
