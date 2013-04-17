@@ -1,3 +1,10 @@
+# Configurations to __git_ps1 function, from contrib/git-prompt.sh
+export GIT_PS1_SHOWDIRTYSTATE=true
+export GIT_PS1_SHOWSTASHSTATE=true
+export GIT_PS1_SHOWUNTRACKEDFILES=true
+export GIT_PS1_SHOWUPSTREAM=auto
+export GIT_PS1_SHOWCOLORHINTS=true
+
 source ${CURRENT_MODULE}/lib/git-completion.bash
 source ${CURRENT_MODULE}/lib/git-prompt.bash
 
