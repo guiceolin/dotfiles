@@ -88,3 +88,6 @@
 [submodule "dotvim/bundle/snipmate-snippets"]
 	path = dotvim/bundle/snipmate-snippets
 	url = git://github.com/honza/snipmate-snippets.git
+[submodule "modules_available/vim/home/.vim/bundle/vundle"]
+	path = modules_available/vim/home/.vim/bundle/vundle
+	url = https://github.com/gmarik/vundle.git
