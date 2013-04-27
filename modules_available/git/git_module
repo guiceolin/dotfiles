@@ -9,13 +9,18 @@ source ${CURRENT_MODULE}/lib/git-completion.bash
 source ${CURRENT_MODULE}/lib/git-prompt.bash
 
 # Git Editor config
-if (( uname -s == 'Darwin' )); then
-  export GIT_EDITOR="mvim"
-  export EDITOR="mvim"
-elif (( uname -s == "Linux" )); then
-  export GIT_EDITOR="gvim"
-  export EDITOR="gvim"
-else
-  export GIT_EDITOR="vim"
-  export EDITOR="vim"
-fi
+
+case $OSTYPE in
+  darwin* )
+    export GIT_EDITOR="mvim"
+    export EDITOR="mvim"
+    ;;
+  linux-gnu )
+    export GIT_EDITOR="gvim"
+    export EDITOR="gvim"
+    ;;
+  *)
+    export GIT_EDITOR="vim"
+    export EDITOR="vim"
+    ;;
+esac
