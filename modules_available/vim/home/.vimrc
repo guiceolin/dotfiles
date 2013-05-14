@@ -47,11 +47,16 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-rake'
+Bundle 'tpope/vim-bundler'
 Bundle 'nanki/treetop.vim'
+Bundle 'rainerborene/vim-reek'
+Bundle 'ecomba/vim-ruby-refactoring'
+Bundle 'nelstrom/vim-textobj-rubyblock'
 
 " JavaScript
 Bundle 'pangloss/vim-javascript'
 Bundle 'kchmck/vim-coffee-script'
+Bundle 'vitaly/vim-syntastic-coffee'
 Bundle 'leshill/vim-json'
 Bundle 'itspriddle/vim-jquery'
 Bundle 'nono/vim-handlebars'
@@ -61,12 +66,17 @@ Bundle 'digitaltoad/vim-jade'
 Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'hallison/vim-markdown'
 Bundle 'groenewege/vim-less'
+Bundle 'tsaleh/vim-tmux'
+
 
 " Libraries
+Bundle 'kana/vim-textobj-user'
 Bundle 'L9'
 Bundle 'tpope/vim-repeat'
+Bundle 'edsono/vim-matchit'
 Bundle 'tomtom/tlib_vim'
 Bundle 'mathml.vim'
+
 
 
 
