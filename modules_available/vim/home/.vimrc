@@ -19,6 +19,9 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlp.vim'
 
+" TMUX
+Bundle 'christoomey/vim-tmux-navigator'
+
 " UI Additions
 Bundle 'mutewinter/vim-indent-guides'
 Bundle 'Lokaltog/vim-powerline'
@@ -42,6 +45,9 @@ Bundle 'honza/vim-snippets'
 Bundle 'MarcWeber/vim-addon-mw-utils'
 
 " Language Additions
+" SLIM
+Bundle 'slim-template/vim-slim'
+
 " Ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-haml'
@@ -201,14 +207,14 @@ silent! nmap <silent> <Leader>p :NERDTreeToggle<CR>
 nnoremap <C-L> :nohls<CR><C-L>
 inoremap <C-L> <C-O>:nohls<CR>
 
-"map to bufexplorer( MiniBufExplorer )
-nnoremap <leader>b :MiniBufExplorer<cr>
+"map to Ctrolp buffer explore
+nnoremap <leader>b :CtrlPBuffer<cr>
 
 "map to Ctrlp style finder
 nnoremap <leader>t :CtrlP<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
-  \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/]vendor[\/]',
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/]vendor[\/]cache[\/]',
   \ }
 
 "map Q to something useful
