@@ -9,3 +9,4 @@ vendor/cache
 
 coverage/
 .bundle/
+.ruby-version
