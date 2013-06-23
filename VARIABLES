@@ -1,0 +1,1 @@
+export DOTFILES_POWERLINE_BINDINGS=$(__current_dir)/../lib/powerline/powerline/bindings
