@@ -24,7 +24,7 @@ Bundle 'christoomey/vim-tmux-navigator'
 
 " UI Additions
 Bundle 'mutewinter/vim-indent-guides'
-Bundle 'Lokaltog/vim-powerline'
+"Bundle 'Lokaltog/vim-powerline'
 Bundle 'Rykka/colorv.vim'
 
 " Commands
@@ -83,8 +83,7 @@ Bundle 'edsono/vim-matchit'
 Bundle 'tomtom/tlib_vim'
 Bundle 'mathml.vim'
 
-
-
+set rtp+=$DOTFILES_POWERLINE_BINDINGS/vim
 
 "allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -182,6 +181,7 @@ else
     if $COLORTERM == 'gnome-terminal'
         set term=gnome-256color
         colorscheme railscasts
+        set guifont=Menlo\ for\ Powerline:h14
     else
         colorscheme default
     endif
