@@ -10,17 +10,20 @@ source ${CURRENT_MODULE}/lib/git-prompt.bash
 
 # Git Editor config
 
-case $OSTYPE in
-  darwin* )
-    export GIT_EDITOR="mvim"
-    export EDITOR="mvim"
-    ;;
-  linux-gnu )
-    export GIT_EDITOR="gvim"
-    export EDITOR="gvim"
-    ;;
-  *)
-    export GIT_EDITOR="vim"
-    export EDITOR="vim"
-    ;;
-esac
+export GIT_EDITOR="vim"
+export EDITOR="vim"
+
+#case $OSTYPE in
+#  darwin* )
+#    export GIT_EDITOR="mvim"
+#    export EDITOR="mvim"
+#    ;;
+#  linux-gnu )
+#    export GIT_EDITOR="gvim"
+#    export EDITOR="gvim"
+#    ;;
+#  *)
+#    export GIT_EDITOR="vim"
+#    export EDITOR="vim"
+#    ;;
+#esac
