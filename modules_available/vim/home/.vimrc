@@ -215,6 +215,7 @@ nnoremap <leader>t :CtrlP<CR>
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_custom_ignore = {
   \ 'dir':  '\v[\/]\.(git|hg|svn)$|\v[\/]vendor[\/]cache[\/]',
+  \ 'file': '\v.(swo)$',
   \ }
 
 "map Q to something useful
