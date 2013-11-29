@@ -18,6 +18,7 @@ Bundle 'ZoomWin'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'ctrlp.vim'
+Bundle 'mattboehm/vim-accordion'
 
 " TMUX
 Bundle 'christoomey/vim-tmux-navigator'
@@ -73,6 +74,7 @@ Bundle 'ChrisYip/Better-CSS-Syntax-for-Vim'
 Bundle 'hallison/vim-markdown'
 Bundle 'groenewege/vim-less'
 Bundle 'tsaleh/vim-tmux'
+Bundle 'rodjek/vim-puppet'
 
 
 " Libraries
