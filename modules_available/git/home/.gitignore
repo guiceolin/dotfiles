@@ -11,3 +11,5 @@ coverage/
 .bundle/
 .ruby-version
 *.swn
+dump.rdb
+.vagrant/
