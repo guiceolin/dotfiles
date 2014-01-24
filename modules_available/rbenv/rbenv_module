@@ -1,3 +1,7 @@
 #Ferramentas para o rbenv
-eval "$(rbenv init -)"
+# Fix for Tmux
+# see https://github.com/sstephenson/rbenv/issues/369
+if [[ -z $TMUX ]]; then
+  eval "$(rbenv init -)"
+fi
 

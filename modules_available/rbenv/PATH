@@ -1,2 +1,7 @@
 #rbenv Binaries.
-PATH=$PATH:~/.rbenv/bin
+# Verify for TMUX
+# see https://github.com/sstephenson/rbenv/issues/369
+# see http://stackoverflow.com/questions/13058578/how-to-prevent-tmux-from-filling-up-the-global-path-variable-with-duplicated-pat
+if [[ -z $TMUX ]]; then
+  PATH=$PATH:~/.rbenv/bin
+fi

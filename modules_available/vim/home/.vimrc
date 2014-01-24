@@ -185,7 +185,8 @@ else
         colorscheme railscasts
         set guifont=Menlo\ for\ Powerline:h14
     else
-        colorscheme default
+        set term=xterm-256color
+        colorscheme railscasts
     endif
 endif
 
