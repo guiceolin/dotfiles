@@ -1,9 +1,0 @@
-#Export the path variable.
-source $(__current_dir)/../PATH
-source $(__current_dir)/../VARIABLES
-__load_modules_path
-
-__load_modules
-
-# Include PS1
-source $(__current_dir)/../PS1

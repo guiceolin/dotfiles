@@ -1,2 +1,0 @@
-export DOTFILES_POWERLINE_BINDINGS=$(__current_dir)/../lib/powerline/powerline/bindings
-export POWERLINE_COMMAND=$(__current_dir)/../lib/powerline/scripts/powerline
