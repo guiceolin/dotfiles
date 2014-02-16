@@ -1,0 +1,64 @@
+#!/bin/bash
+
+# Taken from: https://github.com/sstephenson/bats/blob/master/libexec/bats
+resolve_link() {
+  $(type -p greadlink readlink | head -1) "$1"
+}
+
+# Taken from: https://github.com/sstephenson/bats/blob/master/libexec/bats
+abs_dirname() {
+  local cwd="$(pwd)"
+  local path="$1"
+
+  while [ -n "$path" ]; do
+    cd "${path%/*}"
+    local name="${path##*/}"
+    path="$(resolve_link "$name" || true)"
+  done
+
+  pwd
+  cd "$cwd"
+}
+
+dotfiles_root_path(){
+  local cwd="$(pwd)"
+  cd $LIBEXEC
+  cd '..'
+  pwd
+  cd "$cwd"
+}
+
+usage(){
+  echo "Dotfiles manager, by Guilherme Ceolin."
+  echo ""
+  echo "To install new modules:"
+  echo "       dotfiles install <module>    - Install <module>"
+  echo "       dotfiles install --list      - List all uninstalled modules"
+  exit 1
+}
+
+if [ "$#" -eq 0 ]; then
+  usage
+fi
+
+LIBEXEC="$(abs_dirname "$0")"
+export PATH="$LIBEXEC:$PATH"
+ROOT_PATH="$(dotfiles_root_path $0)"
+export DOTFILES_ROOT_PATH=$ROOT_PATH
+
+command="$1"
+case "$command" in
+  -h|--help)
+    usage
+    ;;
+  *)
+    command_path="$(command -v "dotfiles-$command" || true)"
+    if [ -z "$command_path" ]; then
+      echo "dotfiles: command not found \`$command'"
+      exit 1
+    fi
+
+    shift 1
+    exec "$command_path" "$@"
+esac
+exit 0
