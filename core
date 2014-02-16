@@ -1,0 +1,13 @@
+CURRENT_PATH=$( dirname ${BASH_SOURCE[0]} )
+
+# Load helper funciontions
+source ${CURRENT_PATH}/lib/lib.sh
+
+# Load modules PATH file
+__load_modules_path
+
+# Load modules Manifests
+__load_modules
+
+# Include PS1
+source $CURRENT_PATH/PS1
