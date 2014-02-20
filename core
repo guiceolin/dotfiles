@@ -11,3 +11,8 @@ __load_modules
 
 # Include PS1
 source $CURRENT_PATH/PS1
+
+# Move this to ALIAS
+
+alias c='pygmentize -O style=monokai -f console256 -g'
+
