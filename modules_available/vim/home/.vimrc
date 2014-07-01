@@ -135,9 +135,12 @@ set expandtab
 set autoindent
 
 "folding settings
-set foldmethod=indent   "fold based on indent
+set foldmethod=syntax   "fold based on indent
 set foldnestmax=3       "deepest fold is 3 levels
 set nofoldenable        "dont fold by default
+
+" use the OS clipboard
+set clipboard=unnamed
 
 set wildmode=list:longest   "make cmdline tab completion similar to bash
 set wildmenu                "enable ctrl-n and ctrl-p to scroll thru matches
@@ -181,6 +184,7 @@ else
 
     "set railscasts colorscheme when running vim in gnome terminal
     if $COLORTERM == 'gnome-terminal'
+      set t_Co=256
         set term=gnome-256color
         colorscheme railscasts
         set guifont=Menlo\ for\ Powerline:h14
