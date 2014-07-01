@@ -26,6 +26,6 @@ function __load_modules_path ()
   for m in $PATHS
   do
     CURRENT_MODULE="$( dirname $m )"
-    source $m
+    source $m > /dev/null 2>&1
   done
 }
