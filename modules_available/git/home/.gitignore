@@ -13,3 +13,4 @@ coverage/
 *.swn
 dump.rdb
 .vagrant/
+.envrc
