@@ -1,6 +1,3 @@
-[submodule "modules_available/vim/home/.vim/bundle/vundle"]
-	path = modules_available/vim/home/.vim/bundle/vundle
-	url = https://github.com/gmarik/vundle.git
 [submodule "lib/powerline"]
 	path = lib/powerline
 	url = git@github.com:Lokaltog/powerline.git
