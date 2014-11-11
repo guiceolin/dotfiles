@@ -1,3 +1,0 @@
-[submodule "lib/powerline"]
-	path = lib/powerline
-	url = git@github.com:Lokaltog/powerline.git
