@@ -42,7 +42,3 @@ echo "Linking tmux stuff..."
 tmux_files=(".tmux.conf")
 _link_files "tmux" tmux_files
 echo "done!"
-
-echo "Installing Tmux Plugin Manager (TPM).."
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
-echo "Done!"
