@@ -42,3 +42,8 @@ echo "Linking tmux stuff..."
 tmux_files=(".tmux.conf")
 _link_files "tmux" tmux_files
 echo "done!"
+
+echo "Linking iterm stuff..."
+iterm_files=("com.googlecode.iterm2.plist")
+_link_files "" iterm_files
+echo "done!"
