@@ -1,49 +1,118 @@
 #!/bin/sh
 
-timestamp=$(date +%s)
+# Fail fast
+set -o nounset
+set -o errexit
+set -o pipefail
 
-# Link files from an specific directory
-# $1 is the directory, relative to this file, aka ~/dotfiles
-# $2 is the name of the array with filenames
-function _link_files {
-  # name of filenames array
-  arry_name=("${!2}")
+###
+# Usage
+###
+usage() {
 
-  # iterate over filenames
-  for f in ${arry_name[@]}
-  do
+  cat <<HELP
+  usage:
+  install [ --verbose ]
 
-    # If file exists, or is a symbolic link
-    if [ -e ~/${f} ] || [ -L ~/${f} ]
-    then
+  optional parameters:
+  --verbose    print some progress output to stdout
+HELP
+}
 
-      # backup then
-      echo "${f} exists, moving to ${f}-dotfiles-${timestamp}.backup"
-      mv ~/${f}  ~/${f}-dotfiles-${timestamp}.backup
-    fi
+###
+# Read parameters from command line
+# and set variables
+###
+_read_parameters() {
 
-    # link the new file
-    ln -s ${PWD}/$1/${f} ~/${f}
+  while ((${#})) ; do
+    case "${1}" in
+      --verbose)
+        VERBOSE=1
+        ;;
+      --help)
+        usage
+        exit 0
+        ;;
+
+      *)
+        echo "Unkown parameter '${1}'"
+        exit 1
+        ;;
+    esac
   done
 }
 
-echo "Linking git stuff..."
+###
+# Helper functions
+###
 
-git_files=(".gitignore .gitconfig")
-_link_files "git" git_files
-echo "Done!"
+#### Simple log if verbose
+log() {
+  if [[ $VERBOSE -eq 1 ]]; then
+    echo "$@"
+  fi
+}
 
-echo "Linking ruby stuff..."
-ruby_files=(".gemrc")
-_link_files "ruby" ruby_files
-echo "done!"
+#### Simple link function, with backup if file exists
+_link_file() {
+  local src="${1}"
+  local dest="${2}"
+  local timestamp=$(date +%s)
 
-echo "Linking tmux stuff..."
-tmux_files=(".tmux.conf")
-_link_files "tmux" tmux_files
-echo "done!"
+  log "teste"
+  # Check file exists, and do a backup if exists
+  if [ -e "${dest}" ] || [ -L "${dest}" ]
+  then
+    log "${dest} exists, moving to ${dest}.backup.${timestamp}"
+    mv "${dest}" "${dest}.backup.${timestamp}"
+  fi
 
-echo "Linking iterm stuff..."
-iterm_files=("com.googlecode.iterm2.plist")
-_link_files "" iterm_files
-echo "done!"
+  ln -s "${src}" "${dest}"
+}
+
+#### Link files from $(pwd) to ~/
+_link_dotfile() {
+  local src="$(PWD)/${1}"
+  local dest="~/${2}"
+  _link_file src dest
+}
+
+###
+# link all file to ~/
+###
+_link_files() {
+  for file in ".gitignore" ".gitconfig"; do
+    _link_dotfile "git/${file}" "${file}"
+  done
+
+  # Ruby
+  _link_dotfile "ruby/.gemrc" ".gemrc"
+
+  # Tmux
+  _link_dotfile "tmux/.tmux.conf" ".tmux.conf"
+
+  # iTerm
+  _link_dotfile "iterm/com.googlecode.iterm2.plist" "com.googlecode.iterm2.plist"
+}
+
+###
+# Main function
+###
+_main() {
+  VERBOSE=0
+  echo "teste"
+
+  if [[ "${1:-}" =~ ^-h|--help$  ]]
+  then
+    usage
+  else
+    _read_parameters
+    _link_files
+  fi
+}
+
+###
+# Call Main function
+###
+_main "${@:-}"
