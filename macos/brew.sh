@@ -43,6 +43,7 @@ brew install terminal-notifier
 brew install the_silver_searcher
 brew install tig
 brew install readline
+brew install tmux
 
 brew install vim --override-system-vi
 
@@ -56,6 +57,7 @@ brew cask install slack
 brew cask install kitematic
 brew cask install docker
 brew cask install zeplin
+brew cask install spotify
 
 # Remove outdated versions from the cellar.
 brew cleanup
