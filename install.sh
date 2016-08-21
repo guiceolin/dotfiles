@@ -27,6 +27,18 @@ function _link_files {
   done
 }
 
+# Install Mononoki font
+mkdir /tmp/mononoki
+pushd /tmp/mononoki
+LATEST_RELEASE=$(curl -L -s -H 'Accept: application/json' https://github.com/madmalik/mononoki/releases/latest)
+LATEST_VERISION=$(echo $LATEST_RELEASE | sed -e 's/.*"tag_name":"\(.*\)".*/\1/')
+ARTIFACT_URL="https://github.com/madmalik/mononoki/releases/download/$LATEST_VERISION/mononoki.zip"
+wget $ARTIFACT_URL
+unzip mononoki.zip
+mv *.ttf ~/Library/Fonts/
+rm -rf /tmp/mononoki
+popd
+
 echo "Linking git stuff..."
 
 git_files=(".gitignore .gitconfig")
