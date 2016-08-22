@@ -77,3 +77,9 @@ echo "done!"
 
 # install prezto
 ./prezto
+
+# Vim Stuff
+git clone git@github.com:guiceolin/vimfiles.git ~/vimfiles
+ln -s ~/vimfiles/.vim ~/.vim
+ln -s ~/vimfiles/.vimrc ~/.vimrc
+vim +BundleInstall +qall
