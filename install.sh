@@ -68,3 +68,9 @@ echo "Linking iterm stuff..."
 iterm_files=("com.googlecode.iterm2.plist")
 _link_files "" iterm_files
 echo "done!"
+
+# Installing Macosx dependencies
+./macos/brew.sh
+
+# macos basic configs
+./macos/macos.sh
