@@ -44,6 +44,7 @@ brew install the_silver_searcher
 brew install tig
 brew install readline
 brew install tmux
+brew install fzf
 
 brew install vim --override-system-vi
 
