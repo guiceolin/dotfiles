@@ -27,6 +27,12 @@ function _link_files {
   done
 }
 
+# Installing Macosx dependencies
+./macos/brew.sh
+
+# macos basic configs
+./macos/macos.sh
+
 # Install Mononoki font
 mkdir /tmp/mononoki
 pushd /tmp/mononoki
@@ -69,8 +75,3 @@ iterm_files=("com.googlecode.iterm2.plist")
 _link_files "" iterm_files
 echo "done!"
 
-# Installing Macosx dependencies
-./macos/brew.sh
-
-# macos basic configs
-./macos/macos.sh
