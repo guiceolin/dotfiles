@@ -75,3 +75,5 @@ iterm_files=("com.googlecode.iterm2.plist")
 _link_files "" iterm_files
 echo "done!"
 
+# install prezto
+./prezto
