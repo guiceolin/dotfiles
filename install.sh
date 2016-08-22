@@ -39,6 +39,15 @@ mv *.ttf ~/Library/Fonts/
 rm -rf /tmp/mononoki
 popd
 
+
+# Install another nerd-fonts, while mononoki doesnt get support.
+mkdir /tmp/inconsolata
+pushd /tmp/inconsolata
+wget https://github.com/ryanoasis/nerd-fonts/raw/master/patched-fonts/Inconsolata/complete/Inconsolata%20for%20Powerline%20Nerd%20Font%20Complete.otf
+mv *.otf ~/Library/Fonts/
+rm -rf /tmp/inconsolata
+popd
+
 echo "Linking git stuff..."
 
 git_files=(".gitignore .gitconfig")
