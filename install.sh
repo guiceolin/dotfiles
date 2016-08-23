@@ -83,3 +83,7 @@ git clone git@github.com:guiceolin/vimfiles.git ~/vimfiles
 ln -s ~/vimfiles/.vim ~/.vim
 ln -s ~/vimfiles/.vimrc ~/.vimrc
 vim +BundleInstall +qall
+
+# Install rbenv
+git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
