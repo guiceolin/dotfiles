@@ -59,6 +59,7 @@ brew cask install kitematic
 brew cask install docker
 brew cask install zeplin
 brew cask install spotify
+brew install diff-so-fancy
 
 # Remove outdated versions from the cellar.
 brew cleanup
