@@ -23,6 +23,7 @@ brew install findutils
 brew install gnu-sed --with-default-names
 # install zsh
 brew install zsh
+
 brew tap homebrew/versions
 brew install zsh-completions
 
@@ -34,34 +35,33 @@ brew install homebrew/dupes/grep
 brew install homebrew/dupes/openssh
 brew install homebrew/dupes/screen
 
-brew install binutils
-brew install socat
 brew install ack
+brew install binutils
+brew install diff-so-fancy
+brew install fzf
 brew install git
 brew install lua
+brew install readline
+brew install socat
 brew install terminal-notifier
 brew install the_silver_searcher
 brew install tig
-brew install readline
 brew install tmux
-brew install fzf
-
 brew install vim --override-system-vi
 
 # Brew cask
 brew tap caskroom/cask
 
-brew cask install iterm2
-brew cask install google-chrome
-brew cask install google-backup-and-sync
+brew cask install docker
 brew cask install flycut
+brew cask install google-backup-and-sync
+brew cask install google-chrome
+brew cask install iterm2
+brew cask install kitematic
 brew cask install pritunl
 brew cask install slack
-brew cask install kitematic
-brew cask install docker
-brew cask install zeplin
 brew cask install spotify
-brew install diff-so-fancy
+brew cask install zeplin
 
 # Remove outdated versions from the cellar.
 brew cleanup
