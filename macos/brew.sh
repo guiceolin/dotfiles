@@ -53,6 +53,8 @@ brew tap caskroom/cask
 
 brew cask install iterm2
 brew cask install google-chrome
+brew cask install google-backup-and-sync
+brew cask install flycut
 brew cask install pritunl
 brew cask install slack
 brew cask install kitematic
