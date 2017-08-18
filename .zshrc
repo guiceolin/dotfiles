@@ -11,6 +11,9 @@ else
 fi
 
 # Add zplug plugins
+
+zplug 'zsh-users/zsh-completions', from:github
+
 # OMZ Libs
 zplug "lib/compfix", from:oh-my-zsh, defer:0
 zplug "lib/clipboard", from:oh-my-zsh, defer:0
