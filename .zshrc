@@ -203,6 +203,9 @@ bindkey '^[[B' history-substring-search-down
 
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
+
 # zprof
 
 # tabtab source for serverless package
