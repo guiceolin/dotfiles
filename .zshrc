@@ -47,6 +47,16 @@ zplug load
 
 ## FINISH Zplug config
 
+
+## GOLANG
+export GOPATH=$HOME/projects/golang
+export GOROOT=/usr/local/opt/go/libexec
+path=(
+  $path
+  $GOPATH/bin
+  $GOROOT/bin
+)
+
 ############################################################################################
 
 setopt no_beep              # don't beep on error
