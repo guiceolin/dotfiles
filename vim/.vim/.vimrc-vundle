@@ -1,0 +1,74 @@
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle
+" required!
+Plugin 'VundleVim/vundle.vim'
+
+"Icons
+"Must load BEFORE nerdtree
+Plugin 'ryanoasis/vim-devicons'
+
+" Navigation
+Plugin 'regedarek/ZoomWin'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'terryma/vim-multiple-cursors'
+Plugin 'junegunn/fzf'
+Plugin 'junegunn/fzf.vim'
+
+" TMUX
+"Plugin 'christoomey/vim-tmux-navigator"
+
+" UI Additions
+Plugin 'itchyny/lightline.vim'
+if has('nvim')
+  Plugin 'iCyMind/NeoSolarized'
+else
+  Plugin 'altercation/vim-colors-solarized'
+endif
+Plugin 'airblade/vim-gitgutter'
+
+" Commands
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-fugitive'
+Plugin 'gorkunov/smartpairs.vim'
+
+" Automatic Helpers
+Plugin 'Raimondi/delimitMate'
+Plugin 'w0rp/ale'
+
+" Snippets
+Plugin 'Shougo/deoplete.nvim'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+
+" Language Additions
+
+" Ruby
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'ap/vim-css-color'
+
+" GO lang
+Plugin 'fatih/vim-go'
+"Elixir
+Plugin 'elixir-lang/vim-elixir'
+
+" JavaScript
+Plugin 'pangloss/vim-javascript'
+Plugin 'leshill/vim-json'
+Plugin 'mxw/vim-jsx'
+
+" Other Languages
+Plugin 'hail2u/vim-css3-syntax'
+Plugin 'chase/vim-ansible-yaml'
+Plugin 'tsaleh/vim-tmux'
+
+" Libraries
+Plugin 'tpope/vim-repeat'
+
+call vundle#end()            " required
+filetype plugin indent on    " required
+
