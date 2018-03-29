@@ -41,7 +41,9 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'w0rp/ale'
 
 " Snippets
-Plugin 'Shougo/deoplete.nvim'
+Plugin 'roxma/nvim-completion-manager'
+Plugin 'nsf/gocode', {'rtp': 'nvim/'}
+Plugin 'roxma/ncm-rct-complete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 
