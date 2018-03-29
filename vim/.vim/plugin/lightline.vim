@@ -2,6 +2,7 @@ let g:lightline = {
       \ 'colorscheme': 'solarized',
       \ 'inactive': {
       \   'left': [ [ 'fugitive', 'filename' ] ],
+      \    'right': []
       \ },
       \ 'active': {
       \   'left': [ [ 'mode', 'paste' ],

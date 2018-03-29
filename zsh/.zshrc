@@ -208,12 +208,3 @@ alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
-
-# zprof
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/guiceolin/projects/serverless-project/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/guiceolin/projects/serverless-project/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/guiceolin/projects/serverless-project/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/guiceolin/projects/serverless-project/node_modules/tabtab/.completions/sls.zsh

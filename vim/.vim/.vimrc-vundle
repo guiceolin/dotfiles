@@ -53,6 +53,7 @@ Plugin 'ap/vim-css-color'
 
 " GO lang
 Plugin 'fatih/vim-go'
+
 "Elixir
 Plugin 'elixir-lang/vim-elixir'
 

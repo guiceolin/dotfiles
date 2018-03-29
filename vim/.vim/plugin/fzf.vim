@@ -7,6 +7,7 @@ nnoremap <leader>b :Buffers<CR>
 " Visual
 let g:fzf_layout = { 'down': '~30%' }
 
+" Defining :Ag command
 function! s:ag_to_qf(line)
   let parts = split(a:line, ':')
   return {'filename': parts[0], 'lnum': parts[1], 'col': parts[2],
