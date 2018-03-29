@@ -40,7 +40,3 @@ do
   . $install 2&> /dev/null
   echo "Done!"
 done
-
-
-# Vim Stuff
-nvim +PluginInstall +UpdateRemotePlugins +qall
