@@ -55,7 +55,9 @@ for plugin in $(ls plugins)
 do
   install_file=$(realpath "plugins/$plugin/install.sh")
   if [ -e $install_file ]; then
+    pushd "plugins/$plugin" > /dev/null
     . $install_file 2&> /dev/null
+    popd > /dev/null
   fi
 done
 
