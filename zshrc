@@ -22,7 +22,7 @@ zplug "zsh-users/zsh-autosuggestions", defer:3
 # zplug "pecigonzalo/pure-spaceship-zsh-theme", use:pure.zsh, from:github, as:theme
 # zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 # zplug "denysdovhan/spaceship-zsh-theme", as:theme, defer:3
-zplug "guiceolin/zsh-theme", use:theme.zsh, as:theme, defer:3
+# zplug "guiceolin/zsh-theme", use:theme.zsh, as:theme, defer:3
 
 # And load
 # Install plugins if there are plugins that have not been installed
@@ -48,3 +48,11 @@ for file in $HOME/dotfiles/plugins/**/*.plugin.zsh; do
   source $file
 done
 
+zstyle :dotfiles:theme name guiceolin
+
+local theme
+zstyle -s :dotfiles:theme name theme
+if [[ -f "$HOME/dotfiles/themes/$theme.theme.zsh" ]] ; then
+  source "$HOME/dotfiles/themes/$theme.theme.zsh"
+fi
+unset theme
