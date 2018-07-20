@@ -11,11 +11,6 @@ else
   source ~/.zplug/init.zsh
 fi
 
-# Basic utils
-# zplug "plugins/common-aliases", from:oh-my-zsh
-#zplug "plugins/z", from:oh-my-zsh
-#zplug "rimraf/k", from:github, as:plugin
-
 # Misc
 # zsh-syntax-highlighting must be loaded after executing compinit command and sourcing other plugins
 zplug "zsh-users/zsh-syntax-highlighting", defer:3
