@@ -17,13 +17,6 @@ zplug "zsh-users/zsh-syntax-highlighting", defer:3
 zplug "zsh-users/zsh-history-substring-search", defer:3
 zplug "zsh-users/zsh-autosuggestions", defer:3
 
-# Set Theme
-# zplug "mafredri/zsh-async", from:github, defer:0  # Load this first
-# zplug "pecigonzalo/pure-spaceship-zsh-theme", use:pure.zsh, from:github, as:theme
-# zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-# zplug "denysdovhan/spaceship-zsh-theme", as:theme, defer:3
-# zplug "guiceolin/zsh-theme", use:theme.zsh, as:theme, defer:3
-
 # And load
 # Install plugins if there are plugins that have not been installed
 if ! zplug check; then
