@@ -13,7 +13,6 @@ fi
 
 # Basic utils
 # zplug "plugins/common-aliases", from:oh-my-zsh
-zplug "plugins/ssh-agent", from:oh-my-zsh, if:"which ssh-agent"
 zplug "plugins/z", from:oh-my-zsh
 zplug "rimraf/k", from:github, as:plugin
 
