@@ -13,9 +13,9 @@ fi
 
 # Misc
 # zsh-syntax-highlighting must be loaded after executing compinit command and sourcing other plugins
-zplug "zsh-users/zsh-syntax-highlighting", defer:3
-zplug "zsh-users/zsh-history-substring-search", defer:3
-zplug "zsh-users/zsh-autosuggestions", defer:3
+#zplug "zsh-users/zsh-syntax-highlighting", defer:3
+#zplug "zsh-users/zsh-history-substring-search", defer:3
+#zplug "zsh-users/zsh-autosuggestions", defer:3
 
 # And load
 # Install plugins if there are plugins that have not been installed
@@ -38,6 +38,11 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 #### Source plugins
 for file in $HOME/dotfiles/plugins/**/*.plugin.zsh; do
+  source $file
+done
+
+#### Source Remote plugins
+for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh; do
   source $file
 done
 

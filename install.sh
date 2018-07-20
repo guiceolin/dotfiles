@@ -25,6 +25,23 @@ do
   fi
 done
 
+remote_plugins=(
+  https://github.com/zsh-users/zsh-syntax-highlighting.git
+  https://github.com/zsh-users/zsh-autosuggestions.git
+  https://github.com/zsh-users/zsh-history-substring-search.git
+)
+
+echo -n '> Fething remote plugins...'
+pushd .remote_plugins > /dev/null
+for plugin in ${remote_plugins[@]}
+do
+  repo_name=$(basename -s .git $plugin)
+  if [[ ! -d "$repo_name" ]] ; then
+    git clone $plugin
+  fi
+done
+popd > /dev/null
+
 # Link zshrc to $HOME
 if [[ -f ~/.zshrc ]]; then
   mv ~/.zshrc ~/.zshrc.old
