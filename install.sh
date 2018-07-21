@@ -1,29 +1,11 @@
 #!/bin/bash
 
-# Install Homebrew + dependencies
-which -s brew
-if [[ $? != 0 ]] ; then
-  echo -n "> Brew not found. Installing..."
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-  echo " done!"
-else
-  echo "> Homebrew already installed, skipping."
-fi
+source lib/plugins.zsh
+source lib/dependencies.zsh
 
-echo -n "> Installing brew dependencies..."
-brew bundle install &> /dev/null
-echo " done!"
+dotfiles:dependencies:install
 
-# Run install script for each plugin
-for plugin in $(ls plugins)
-do
-  install_file=$(realpath "plugins/$plugin/install.sh")
-  if [ -e $install_file ]; then
-    pushd "plugins/$plugin" > /dev/null
-    . $install_file 2&> /dev/null
-    popd > /dev/null
-  fi
-done
+dotfiles:plugins:install_plugins
 
 remote_plugins=(
   https://github.com/zsh-users/zsh-syntax-highlighting.git
@@ -31,16 +13,7 @@ remote_plugins=(
   https://github.com/zsh-users/zsh-history-substring-search.git
 )
 
-echo -n '> Fething remote plugins...'
-pushd .remote_plugins > /dev/null
-for plugin in ${remote_plugins[@]}
-do
-  repo_name=$(basename -s .git $plugin)
-  if [[ ! -d "$repo_name" ]] ; then
-    git clone $plugin
-  fi
-done
-popd > /dev/null
+dotfiles:plugins:install_remote_plugins
 
 # Link zshrc to $HOME
 if [[ -f ~/.zshrc ]]; then
