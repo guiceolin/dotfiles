@@ -5,6 +5,6 @@ pyenv global 3.7.0
 
 pip install --upgrade pip
 
+pip install neovim
 pip install virtualenv
-
 pip install jedi
