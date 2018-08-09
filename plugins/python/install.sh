@@ -1,7 +1,7 @@
 git clone https://github.com/pyenv/pyenv.git ~/.pyenv
 
-pyenv install -s 3.7.0
-pyenv global 3.7.0
+pyenv install -s 3.6.6
+pyenv global 3.6.6
 
 pip install --upgrade pip
 
