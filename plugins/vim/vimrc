@@ -149,3 +149,6 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
+let g:deoplete#enable_at_startup = 1
+
+set termguicolors
