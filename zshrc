@@ -19,3 +19,7 @@ if [[ -f "$HOME/dotfiles/themes/$theme.theme.zsh" ]] ; then
   source "$HOME/dotfiles/themes/$theme.theme.zsh"
 fi
 unset theme
+
+if [[ -f "$HOME/.zshrc.local" ]] ; then
+  source "$HOME/.zshrc.local"
+fi
