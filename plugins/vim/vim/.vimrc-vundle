@@ -66,7 +66,7 @@ Plugin 'mxw/vim-jsx'
 
 "Python
 Plugin 'zchee/deoplete-jedi'
-Plugin 'hdima/python-syntax'
+Plugin 'vim-python/python-syntax'
 
 " Other Languages
 Plugin 'hail2u/vim-css3-syntax'
