@@ -8,3 +8,5 @@ pip install --upgrade pip
 pip install neovim
 pip install virtualenv
 pip install jedi
+
+ln -sf $(realpath "bin/venv") ~/.local/bin
