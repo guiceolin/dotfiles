@@ -28,6 +28,13 @@ function theme_precmd() {
   vcs_info 'prompt'
 }
 
+function _virtualenv_active() {
+  virtualenv=`basename "$VIRTUAL_ENV"`
+  for v in "$debian_chroot" "$virtualenv" "$PS1_CONTEXT"; do
+    echo -n "${v:+[$v\ue73c]}"
+  done
+}
+
 add-zsh-hook precmd theme_precmd
 
 local branch_format="(%F{81}%b%f%u%c)"
@@ -45,6 +52,6 @@ zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 setopt prompt_subst
 
-PROMPT=""'%F{135}%n%f at %F{166}%m%f in %F{118}%~%f ${vcs_info_msg_0_}
-$ '""
+PROMPT=""'%F{135}%n%f at %F{166}%m%f in %F{118}%~%f ${vcs_info_msg_0_}%F{022}$(_virtualenv_active)
+%F{015}$ '""
 #RPROMPT="%F{red}[$(rbenv version-name)]"
