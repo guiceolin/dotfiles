@@ -7,6 +7,8 @@ pip install --upgrade pip
 
 pip install neovim
 pip install virtualenv
-pip install jedi
+
+pip install flake8
+ln -s `pyenv which flake8` ~/.local/bin/flake8
 
 ln -sf $(realpath "bin/venv") ~/.local/bin
