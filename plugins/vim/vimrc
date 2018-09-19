@@ -1,6 +1,9 @@
 set laststatus=2
 set nocompatible
 
+set encoding=utf-8
+scriptencoding utf-8
+
 "Load Plugins
 filetype off
 source ~/.vim/.vimrc-vundle
@@ -155,3 +158,4 @@ set termguicolors
 
 "Use _ as boundery
 set iskeyword-=_
+set fillchars=vert:\┃
