@@ -1,6 +1,6 @@
 ## GOLANG
 export GOPATH=$HOME/projects/golang
-export GOROOT=/usr/local/opt/go/libexec
+export GOROOT=$HOME/.local/go
 path=(
   $path
   $GOPATH/bin
