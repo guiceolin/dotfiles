@@ -25,10 +25,12 @@ Plugin 'junegunn/fzf.vim'
 Plugin 'itchyny/lightline.vim'
 if has('nvim')
   Plugin 'iCyMind/NeoSolarized'
+  Plugin 'altercation/vim-colors-solarized'
 else
   Plugin 'altercation/vim-colors-solarized'
 endif
-Plugin 'airblade/vim-gitgutter'
+""Plugin 'airblade/vim-gitgutter'
+Plugin 'mhinz/vim-signify'
 
 " Commands
 Plugin 'scrooloose/nerdcommenter'
