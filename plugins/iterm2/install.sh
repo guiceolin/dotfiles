@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+mkdir -p ~/.config
 if [[ -f ~/.config/iterm2 ]]; then
   mv ~/.config/iterm2 ~/.config/iterm2.old
   ln -s $(realpath ".config/iterm2") ~/.config
