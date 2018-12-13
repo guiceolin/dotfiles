@@ -1,8 +1,6 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/core"
-tap "homebrew/dupes"
-tap "homebrew/versions"
 tap "neovim/neovim"
 brew "ack"
 brew "autoconf"
