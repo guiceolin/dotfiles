@@ -41,7 +41,6 @@ brew "wget"
 brew "yarn"
 brew "zlib", link: true
 brew "zsh"
-brew "zsh-completions"
 cask "atom"
 cask "docker"
 cask "firefox"

@@ -1,6 +1,3 @@
-# zmodload zsh/zprof
-fpath=(/usr/local/share/zsh-completions $fpath)
-
 #### Source plugins
 for file in $HOME/dotfiles/plugins/**/*.plugin.zsh; do
   source $file
