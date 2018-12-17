@@ -36,3 +36,4 @@ man() {
 #### END Colored Man Pages
 
 
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=white'
