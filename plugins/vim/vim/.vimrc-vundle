@@ -41,6 +41,8 @@ Plugin 'gorkunov/smartpairs.vim'
 " Automatic Helpers
 Plugin 'Raimondi/delimitMate'
 Plugin 'w0rp/ale'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
 
 " Snippets
 Plugin 'Shougo/deoplete.nvim'
