@@ -4,6 +4,9 @@ nnoremap <leader>t :GFiles<CR>
 " Using fzf to open bufffers
 nnoremap <leader>b :Buffers<CR>
 
+" Using fzf to find tags (mnemonics for methods)
+nnoremap <leader>m :Tags<CR>
+
 " Visual
 let g:fzf_layout = { 'down': '~30%' }
 
