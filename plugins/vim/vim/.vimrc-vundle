@@ -43,7 +43,7 @@ Plugin 'majutsushi/tagbar'
 
 " Snippets
 Plugin 'Shougo/deoplete.nvim'
-Plugin 'nsf/gocode', {'rtp': 'nvim/'}
+Plugin 'mdempsky/gocode', {'rtp': 'nvim/'}
 Plugin 'roxma/ncm-rct-complete'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
@@ -56,6 +56,7 @@ Plugin 'ap/vim-css-color'
 
 " GO lang
 Plugin 'fatih/vim-go'
+Plugin 'zchee/deoplete-go'
 
 "Elixir
 Plugin 'elixir-lang/vim-elixir'
