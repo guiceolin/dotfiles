@@ -31,3 +31,5 @@ if [[ -f ~/.zprofile ]]; then
 else
   ln -sf $(realpath "zshrc") $HOME/.zprofile
 fi
+
+mkdir -p $HOME/.local/bin
