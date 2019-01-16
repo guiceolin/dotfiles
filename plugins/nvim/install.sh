@@ -8,22 +8,18 @@ else
   ln -sf $(realpath ".config/nvim") ~/.config
 fi
 
+# Install python 3
 pyenv install -s 3.6.6
 pyenv global 3.6.6
 
 pip install --upgrade pip
 pip install virtualenv
 
-mkdir -p ~/.local/.venv/
-virtualenv ~/.local/.venv/
+NVIM_VIRTUALENV=~/.local/.venv
 
-export VIRTUAL_ENV="$HOME/.local/.venv"
-old_path=$PATH
-export PATH="$VIRTUAL_ENV/bin:$PATH"
+mkdir -p $NVIM_VIRTUALENV
+virtualenv $NVIM_VIRTUALENV
 
-pip install neovim
+$NVIM_VIRTUALENV/bin/pip install neovim flake8
 
-pip install flake8
-ln -s `pyenv which flake8` ~/.local/bin/flake8
-
-export PATH=$old_path
+ln -s $HOME/.local/.venv/bin/flake8 ~/.local/bin/flake8
