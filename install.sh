@@ -29,5 +29,5 @@ if [[ -f ~/.zprofile ]]; then
   mv ~/.zprofile ~/.zprofile.old
   ln -s $(realpath "zshrc") $HOME/.zprofile
 else
-  ln -sf $(realpath "zshrc") $HOME/.zprfile
+  ln -sf $(realpath "zshrc") $HOME/.zprofile
 fi
