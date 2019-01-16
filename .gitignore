@@ -1,5 +1,6 @@
 plugins/vim/vim/bundle/
 plugins/z/z/
 plugins/k/k/
+plugins/diff-so-fancy/bin/
 
 .remote_plugins/
