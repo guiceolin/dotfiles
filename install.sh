@@ -27,9 +27,9 @@ fi
 # Link zprofile to $HOME
 if [[ -f ~/.zprofile ]]; then
   mv ~/.zprofile ~/.zprofile.old
-  ln -s $(realpath "zshrc") $HOME/.zprofile
+  ln -s $(realpath "zprofile") $HOME/.zprofile
 else
-  ln -sf $(realpath "zshrc") $HOME/.zprofile
+  ln -sf $(realpath "zprofile") $HOME/.zprofile
 fi
 
 mkdir -p $HOME/.local/bin
