@@ -11,5 +11,6 @@ mkdir -p ~/Library/Fonts/
 cp ./*.ttf ~/Library/Fonts/
 mkdir -p ~/.local/share/fonts/
 cp ./*.ttf ~/.local/share/fonts/
+sudo fc-cache -vf ~/.local/share/fonts
 
 cd - && rm -rf /tmp/mononoki
