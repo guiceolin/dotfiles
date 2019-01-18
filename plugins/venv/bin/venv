@@ -18,7 +18,6 @@ elif [ "$1" = "-c" ]; then cat <<- DONE
         unset PYTHON_HOME;
 DONE
 
-# Otherwise, launch a shell or subcommand
 else
-  exec "${@:-tmux}"
+  exec "${@:-zsh}"
 fi
