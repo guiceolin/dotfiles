@@ -64,6 +64,7 @@ Plugin 'elixir-lang/vim-elixir'
 Plugin 'pangloss/vim-javascript'
 Plugin 'leshill/vim-json'
 Plugin 'mxw/vim-jsx'
+Plugin 'mustache/vim-mustache-handlebars'
 
 "Python
 Plugin 'zchee/deoplete-jedi'
