@@ -29,10 +29,11 @@ function theme_precmd() {
 }
 
 function _virtualenv_active() {
-  virtualenv=`basename "$VIRTUAL_ENV"`
-  for v in "$debian_chroot" "$virtualenv" "$PS1_CONTEXT"; do
-    echo -n "${v:+[$v\ue73c]}"
-  done
+  if [ ! -z "$VIRTUAL_ENV" ]; then
+    virtualenv=`basename "$VIRTUAL_ENV"`
+    python_version=`pyenv version-name`
+    echo -n "(\ue73c$python_version $virtualenv)"
+  fi
 }
 
 add-zsh-hook precmd theme_precmd
