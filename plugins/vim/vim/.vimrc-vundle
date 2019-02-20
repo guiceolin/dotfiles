@@ -16,6 +16,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'junegunn/fzf'
 Plugin 'junegunn/fzf.vim'
+Plugin 'romainl/vim-qlist'
 
 " TMUX
 "Plugin 'christoomey/vim-tmux-navigator"
@@ -26,7 +27,6 @@ if has('nvim')
   Plugin 'iCyMind/NeoSolarized'
 endif
 Plugin 'altercation/vim-colors-solarized'
-""Plugin 'airblade/vim-gitgutter'
 Plugin 'mhinz/vim-signify'
 
 " Commands
