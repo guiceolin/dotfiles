@@ -102,3 +102,4 @@ Temporary Items
 .env.development
 tags
 .flake8
+.venv
