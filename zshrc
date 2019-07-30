@@ -20,3 +20,6 @@ unset theme
 if [[ -f "$HOME/.zshrc.local" ]] ; then
   source "$HOME/.zshrc.local"
 fi
+
+EDITOR=nvim
+
