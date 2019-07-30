@@ -21,5 +21,10 @@ if [[ -f "$HOME/.zshrc.local" ]] ; then
   source "$HOME/.zshrc.local"
 fi
 
+path=(
+  $HOME/.local/bin
+  $path
+)
+
 EDITOR=nvim
 
