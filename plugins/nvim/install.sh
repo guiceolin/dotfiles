@@ -20,6 +20,6 @@ NVIM_VIRTUALENV=~/.local/.venv
 mkdir -p $NVIM_VIRTUALENV
 virtualenv $NVIM_VIRTUALENV
 
-$NVIM_VIRTUALENV/bin/pip install neovim flake8
+$NVIM_VIRTUALENV/bin/pip install neovim flake8 black
 
 ln -s $HOME/.local/.venv/bin/flake8 ~/.local/bin/flake8
