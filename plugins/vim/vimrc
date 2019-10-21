@@ -4,6 +4,8 @@ set nocompatible
 set encoding=utf-8
 scriptencoding utf-8
 
+let g:black_virtualenv = '~/.local/.venv'
+
 "Load Plugins
 filetype off
 source ~/.vim/.vimrc-vundle
