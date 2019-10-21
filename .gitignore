@@ -5,3 +5,4 @@ plugins/diff-so-fancy/bin/
 plugins/maven/maven
 
 .remote_plugins/
+plugins/vim/vim/plugged/
