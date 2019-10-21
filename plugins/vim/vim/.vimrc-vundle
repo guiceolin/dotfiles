@@ -1,83 +1,85 @@
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
 " let Vundle manage Vundle
 " required!
-Plugin 'VundleVim/vundle.vim'
+" Plug 'VundleVim/vundle.vim'
 
 "Icons
 "Must load BEFORE nerdtree
-Plugin 'ryanoasis/vim-devicons'
+Plug 'ryanoasis/vim-devicons'
 
 " Navigation
-Plugin 'regedarek/ZoomWin'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'junegunn/fzf'
-Plugin 'junegunn/fzf.vim'
-Plugin 'romainl/vim-qlist'
+Plug 'regedarek/ZoomWin'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/fzf'
+Plug 'junegunn/fzf.vim'
+Plug 'romainl/vim-qlist'
 
 " TMUX
-"Plugin 'christoomey/vim-tmux-navigator"
+"Plug 'christoomey/vim-tmux-navigator"
 
 " UI Additions
-Plugin 'itchyny/lightline.vim'
+Plug 'itchyny/lightline.vim'
 if has('nvim')
-  Plugin 'iCyMind/NeoSolarized'
+  Plug 'iCyMind/NeoSolarized'
 endif
-Plugin 'altercation/vim-colors-solarized'
-Plugin 'mhinz/vim-signify'
+Plug 'altercation/vim-colors-solarized'
+Plug 'mhinz/vim-signify'
 
 " Commands
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'tpope/vim-surround'
-Plugin 'tpope/vim-fugitive'
-Plugin 'gorkunov/smartpairs.vim'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-fugitive'
+Plug 'gorkunov/smartpairs.vim'
 
 " Automatic Helpers
-Plugin 'Raimondi/delimitMate'
-Plugin 'w0rp/ale'
-Plugin 'ludovicchabant/vim-gutentags'
-Plugin 'majutsushi/tagbar'
+Plug 'Raimondi/delimitMate'
+Plug 'w0rp/ale'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
 
 " Snippets
-Plugin 'Shougo/deoplete.nvim'
-Plugin 'mdempsky/gocode', {'rtp': 'nvim/'}
-Plugin 'roxma/ncm-rct-complete'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'Shougo/deoplete.nvim'
+Plug 'mdempsky/gocode', {'rtp': 'nvim/'}
+Plug 'roxma/ncm-rct-complete'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
 
 " Language Additions
 
 " Ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'ap/vim-css-color'
+Plug 'vim-ruby/vim-ruby'
+Plug 'ap/vim-css-color'
 
 " GO lang
-Plugin 'fatih/vim-go'
-Plugin 'zchee/deoplete-go'
+Plug 'fatih/vim-go'
+Plug 'zchee/deoplete-go'
 
 "Elixir
-Plugin 'elixir-lang/vim-elixir'
+Plug 'elixir-lang/vim-elixir'
 
 " JavaScript
-Plugin 'pangloss/vim-javascript'
-Plugin 'leshill/vim-json'
-Plugin 'mxw/vim-jsx'
-Plugin 'mustache/vim-mustache-handlebars'
+Plug 'pangloss/vim-javascript'
+Plug 'leshill/vim-json'
+Plug 'mxw/vim-jsx'
+Plug 'mustache/vim-mustache-handlebars'
 
 "Python
-Plugin 'zchee/deoplete-jedi'
-Plugin 'vim-python/python-syntax'
+Plug 'zchee/deoplete-jedi'
+Plug 'vim-python/python-syntax'
+Plug 'psf/black'
 
 " Other Languages
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'chase/vim-ansible-yaml'
-Plugin 'tsaleh/vim-tmux'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'chase/vim-ansible-yaml'
+Plug 'tsaleh/vim-tmux'
 
 " Libraries
-Plugin 'tpope/vim-repeat'
+Plug 'tpope/vim-repeat'
+Plug 'Shougo/vimproc'
 
-call vundle#end()            " required
+call plug#end()
 filetype plugin indent on    " required
