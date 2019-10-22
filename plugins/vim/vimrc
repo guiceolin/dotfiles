@@ -159,5 +159,5 @@ let g:deoplete#enable_at_startup = 1
 set termguicolors
 
 "Use _ as boundery
-set iskeyword-=_
+" set iskeyword-=_
 set fillchars=vert:\┃
