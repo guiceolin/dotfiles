@@ -22,10 +22,7 @@ Plug 'romainl/vim-qlist'
 
 " UI Additions
 Plug 'itchyny/lightline.vim'
-if has('nvim')
-  Plug 'iCyMind/NeoSolarized'
-endif
-Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 Plug 'mhinz/vim-signify'
 
 " Commands
