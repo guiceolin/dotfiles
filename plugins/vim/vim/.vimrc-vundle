@@ -5,20 +5,14 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/plugged')
-
-" let Vundle manage Vundle
-" required!
-" Plug 'VundleVim/vundle.vim'
-
+"
 "Icons
 "Must load BEFORE nerdtree
 Plug 'ryanoasis/vim-devicons'
 
 " Navigation
-Plug 'regedarek/ZoomWin'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-" Plug 'terryma/vim-multiple-cursors'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'romainl/vim-qlist'
@@ -48,21 +42,15 @@ Plug 'majutsushi/tagbar'
 
 " Snippets
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'Shougo/deoplete.nvim'
-Plug 'mdempsky/gocode', {'rtp': 'nvim/'}
-Plug 'roxma/ncm-rct-complete'
-Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 " Language Additions
 
 " Ruby
 Plug 'vim-ruby/vim-ruby'
-Plug 'ap/vim-css-color'
 
 " GO lang
-Plug 'fatih/vim-go'
-Plug 'zchee/deoplete-go'
+Plug 'fatih/vim-go',  { 'do': ':GoUpdateBinaries' }
 
 "Elixir
 Plug 'elixir-lang/vim-elixir'
@@ -74,12 +62,12 @@ Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
 
 "Python
-Plug 'zchee/deoplete-jedi'
 Plug 'vim-python/python-syntax'
 Plug 'psf/black'
 
 " Other Languages
 Plug 'hail2u/vim-css3-syntax'
+Plug 'ap/vim-css-color'
 Plug 'chase/vim-ansible-yaml'
 Plug 'tsaleh/vim-tmux'
 
