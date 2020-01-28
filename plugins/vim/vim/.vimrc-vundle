@@ -33,7 +33,7 @@ Plug 'gorkunov/smartpairs.vim'
 
 " Automatic Helpers
 Plug 'Raimondi/delimitMate'
-Plug 'w0rp/ale'
+"Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
