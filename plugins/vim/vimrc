@@ -7,7 +7,6 @@ scriptencoding utf-8
 let g:black_virtualenv = '~/.local/.venv'
 
 "Load Plugins
-filetype off
 source ~/.vim/.vimrc-vundle
 
 set backspace=indent,eol,start
@@ -154,10 +153,9 @@ function! XTermPasteBegin()
 endfunction
 
 inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
-let g:deoplete#enable_at_startup = 1
-
-set termguicolors
 
 "Use _ as boundery
 " set iskeyword-=_
 set fillchars=vert:\┃
+
+set clipboard+=unnamedplus
