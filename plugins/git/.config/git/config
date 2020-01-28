@@ -136,3 +136,5 @@
 	token = !security find-internet-password -a guiceolin -s github.com -l 'ghi token' -w
 [gpg]
 	program = gpg1
+[credential]
+	helper = store
