@@ -57,6 +57,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'leshill/vim-json'
 Plug 'mxw/vim-jsx'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'joaohkfaria/vim-jest-snippets'
 
 "Python
 Plug 'vim-python/python-syntax'

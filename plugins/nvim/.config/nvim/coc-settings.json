@@ -1,5 +1,8 @@
 {
   "python.jediEnabled": false,
+  "eslint.filetypes": ["javascript", "typescript", "typescriptreact", "javascriptreact"],
   "suggest.echodocSupport": true,
   "suggest.maxCompleteItemCount": 20,
+
+  "tsserver.npm": "/usr/local/bin/npm"
 }
