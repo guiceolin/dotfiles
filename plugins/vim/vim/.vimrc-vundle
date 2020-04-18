@@ -22,7 +22,8 @@ Plug 'romainl/vim-qlist'
 
 " UI Additions
 Plug 'itchyny/lightline.vim'
-Plug 'lifepillar/vim-solarized8'
+" Plug 'lifepillar/vim-solarized8'
+Plug 'sainnhe/edge'
 Plug 'mhinz/vim-signify'
 
 " Commands
