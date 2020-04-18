@@ -17,9 +17,6 @@ Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'romainl/vim-qlist'
 
-" TMUX
-"Plug 'christoomey/vim-tmux-navigator"
-
 " UI Additions
 Plug 'itchyny/lightline.vim'
 " Plug 'lifepillar/vim-solarized8'
@@ -34,44 +31,24 @@ Plug 'gorkunov/smartpairs.vim'
 
 " Automatic Helpers
 Plug 'Raimondi/delimitMate'
-"Plug 'w0rp/ale'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'majutsushi/tagbar'
 
 " Snippets
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
-
-" Language Additions
-
-" Ruby
-Plug 'vim-ruby/vim-ruby'
-
-" GO lang
-Plug 'fatih/vim-go',  { 'do': ':GoUpdateBinaries' }
-
-"Elixir
-Plug 'elixir-lang/vim-elixir'
-
-" JavaScript
-Plug 'pangloss/vim-javascript'
-Plug 'leshill/vim-json'
-Plug 'mxw/vim-jsx'
-Plug 'mustache/vim-mustache-handlebars'
 Plug 'joaohkfaria/vim-jest-snippets'
 
+" Language Additions
+Plug 'sheerun/vim-polyglot'
+
 "Python
-Plug 'vim-python/python-syntax'
 Plug 'psf/black'
 
 " Other Languages
 Plug 'hail2u/vim-css3-syntax'
 Plug 'ap/vim-css-color'
-Plug 'chase/vim-ansible-yaml'
-Plug 'tsaleh/vim-tmux'
 
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 
