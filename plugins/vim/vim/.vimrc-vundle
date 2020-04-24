@@ -15,7 +15,7 @@ Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'romainl/vim-qlist'
+" Plug 'romainl/vim-qlist'
 
 " UI Additions
 Plug 'itchyny/lightline.vim'
@@ -24,9 +24,10 @@ Plug 'sainnhe/edge'
 Plug 'mhinz/vim-signify'
 
 " Commands
-Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-dispatch'
 Plug 'gorkunov/smartpairs.vim'
 
 " Automatic Helpers
@@ -50,7 +51,6 @@ Plug 'hail2u/vim-css3-syntax'
 Plug 'ap/vim-css-color'
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-
 
 " Libraries
 Plug 'tpope/vim-repeat'
