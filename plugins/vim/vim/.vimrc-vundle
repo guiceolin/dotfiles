@@ -11,8 +11,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'ryanoasis/vim-devicons'
 
 " Navigation
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'scrooloose/nerdtree'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
 " Plug 'romainl/vim-qlist'
