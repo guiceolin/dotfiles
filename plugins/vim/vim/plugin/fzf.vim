@@ -1,41 +1,54 @@
 " Using fzf to find files
-nnoremap <leader>t :GFiles<CR>
+"nnoremap <leader>t :GFiles<cr>
 
 " Using fzf to open bufffers
 nnoremap <leader>b :Buffers<CR>
 
 " Using fzf to find tags (mnemonics for methods)
 nnoremap <leader>m :Tags<CR>
+nnoremap <leader>/ :BLines<CR>
 
-" Visual
-let g:fzf_layout = { 'window': 'call OpenFloatingWin()' }
+nnoremap <silent> <leader>t :call Fzf_dev()<CR>
 
-function! OpenFloatingWin()
-  let height = &lines - 3
-  let width = float2nr(&columns - (&columns * 2 / 10))
-  let col = float2nr((&columns - width) / 2)
+" SHAMELESS inspired from https://gist.github.com/danmikita/d855174385b3059cd6bc399ad799555e
 
-  "Set the position, size, etc. of the floating window.
-  "The size configuration here may not be so flexible, and there's room for further improvement.
-  let opts = {
-        \ 'relative': 'editor',
-        \ 'row': height * 0.3,
-        \ 'col': col + 30,
-        \ 'width': width * 2 / 3,
-        \ 'height': height / 2
-        \ }
+" ripgrep
+if executable('rg')
+  let $FZF_DEFAULT_COMMAND = 'rg --files --hidden --follow --glob "!.git/*"'
+  set grepprg=rg\ --vimgrep
+  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+endif
 
-  let buf = nvim_create_buf(v:false, v:true)
-  let win = nvim_open_win(buf, v:true, opts)
+" Files + devicons
+function! Fzf_dev()
+  let l:fzf_files_options = '--ansi --preview "bat --style=numbers,changes --color always {2..-1} | head -'.&lines.'"'
 
-  "Set Floating Window Highlighting
-  "call setwinvar(win, '&winhl', 'Normal:Pmenu')
+  function! s:files()
+    let l:files = split(system($FZF_DEFAULT_COMMAND), '\n')
+    return s:prepend_icon(l:files)
+  endfunction
 
-  setlocal
-        \ buftype=nofile
-        \ nobuflisted
-        \ bufhidden=hide
-        \ nonumber
-        \ norelativenumber
-        \ signcolumn=no
+  function! s:prepend_icon(candidates)
+    let l:result = []
+    for l:candidate in a:candidates
+      let l:filename = fnamemodify(l:candidate, ':p:t')
+      let l:icon = WebDevIconsGetFileTypeSymbol(l:filename, isdirectory(l:filename))
+      call add(l:result, printf('%s %s', l:icon, l:candidate))
+    endfor
+
+    return l:result
+  endfunction
+
+  function! s:edit_file(item)
+    let l:pos = stridx(a:item, ' ')
+    let l:file_path = a:item[pos+1:-1]
+    execute 'silent e' l:file_path
+  endfunction
+
+  call fzf#run({
+      \ 'source': <sid>files(),
+      \ 'sink':   function('s:edit_file'),
+      \ 'options': '-m --preview-window "right:60%" ' . l:fzf_files_options,
+      \ 'up':    '90%',
+      \ 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } })
 endfunction
