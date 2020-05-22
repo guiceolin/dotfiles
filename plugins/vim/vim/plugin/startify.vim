@@ -15,7 +15,8 @@ let g:startify_session_persistence = 1
 let g:startify_bookmarks = [
             \ { 'i': '~/.vimrc' },
             \ { 'z': '~/.zshrc' },
-            \ { 'd': '~/dotfiles'}
+            \ { 'd': '~/dotfiles'},
+            \ { 'v': '~/.vim'}
             \ ]
 
 let g:startify_enable_special = 0
