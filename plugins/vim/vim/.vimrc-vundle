@@ -13,6 +13,8 @@ Plug 'ryanoasis/vim-devicons'
 " Navigation
 "Plug 'scrooloose/nerdtree'
 "Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'kyazdani42/nvim-web-devicons' " for file icons
+Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
 Plug 'junegunn/fzf'
 Plug 'junegunn/fzf.vim'
