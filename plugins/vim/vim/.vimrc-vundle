@@ -11,8 +11,6 @@ call plug#begin('~/.vim/plugged')
 Plug 'ryanoasis/vim-devicons'
 
 " Navigation
-"Plug 'scrooloose/nerdtree'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
@@ -41,6 +39,7 @@ Plug 'tpope/vim-obsession'
 
 " Snippets
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/completion-nvim'
 Plug 'honza/vim-snippets'
 Plug 'joaohkfaria/vim-jest-snippets'
 
