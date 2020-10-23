@@ -6,7 +6,6 @@ update: --env-shebang
 install: --env-shebang
 :verbose: true
 :sources:
-- http://gems.github.com/
 - http://rubygems.org
 :bulk_threshold: 1000
 :update_sources: true
