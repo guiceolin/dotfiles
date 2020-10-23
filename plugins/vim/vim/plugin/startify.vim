@@ -16,7 +16,8 @@ let g:startify_bookmarks = [
             \ { 'i': '~/.vimrc' },
             \ { 'z': '~/.zshrc' },
             \ { 'd': '~/dotfiles'},
-            \ { 'v': '~/.vim'}
+            \ { 'v': '~/.vim'},
+            \ { 'p': '~/.vim/.vimrc-vundle'}
             \ ]
 
 let g:startify_enable_special = 0
