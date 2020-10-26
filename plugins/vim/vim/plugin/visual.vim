@@ -22,6 +22,7 @@ set termguicolors
 " let g:solarized_extra_hi_groups = 1
 " colorscheme solarized8_high
 
-let g:edge_style = 'neon'
+"let g:edge_style = 'neon'
 
-colorscheme edge
+"colorscheme edge
+colorscheme gruvbox

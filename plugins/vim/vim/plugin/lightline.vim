@@ -1,5 +1,5 @@
 let g:lightline = {
-      \ 'colorscheme': 'solarized',
+      \ 'colorscheme': 'gruvbox',
       \ 'inactive': {
       \   'left': [ [ 'fugitive', 'filename' ] ],
       \    'right': []
