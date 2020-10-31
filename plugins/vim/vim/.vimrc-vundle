@@ -6,19 +6,15 @@ endif
 
 call plug#begin('~/.vim/plugged')
 "
-"Icons
-"Must load BEFORE nerdtree
-Plug 'ryanoasis/vim-devicons'
-
 " Navigation
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
-" Plug 'romainl/vim-qlist'
 " Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Plug 'junegunn/fzf.vim'
 
 " UI Additions
+Plug 'ryanoasis/vim-devicons'
 Plug 'itchyny/lightline.vim'
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
@@ -35,7 +31,6 @@ Plug 'gorkunov/smartpairs.vim'
 " Automatic Helpers
 Plug 'Raimondi/delimitMate'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'majutsushi/tagbar'
 Plug 'tpope/vim-obsession'
 
 " Snippets
@@ -45,9 +40,6 @@ Plug 'joaohkfaria/vim-jest-snippets'
 
 " Language Additions
 Plug 'sheerun/vim-polyglot'
-
-"Python
-Plug 'psf/black'
 
 " Other Languages
 Plug 'hail2u/vim-css3-syntax'
@@ -59,8 +51,8 @@ Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 Plug 'neovim/nvim-lsp'
 
 " Libraries
-Plug 'tpope/vim-repeat'
-Plug 'Shougo/vimproc'
+" Plug 'tpope/vim-repeat'
+" Plug 'Shougo/vimproc'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
