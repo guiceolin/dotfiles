@@ -5,6 +5,7 @@ lua <<EOF
   require'nvim_lsp'.html.setup{}
   require'nvim_lsp'.gopls.setup{}
   require'nvim_lsp'.solargraph.setup{}
+  require'nvim_lsp'.pyls.setup{}
 EOF
 
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
