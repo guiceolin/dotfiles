@@ -43,7 +43,8 @@ Plug 'sheerun/vim-polyglot'
 
 " Other Languages
 Plug 'hail2u/vim-css3-syntax'
-Plug 'ap/vim-css-color'
+"Plug 'ap/vim-css-color'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
