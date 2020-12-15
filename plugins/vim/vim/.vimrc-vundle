@@ -48,7 +48,7 @@ Plug 'ap/vim-css-color'
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " LSP
-Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lspconfig'
 
 " Libraries
 " Plug 'tpope/vim-repeat'

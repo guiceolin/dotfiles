@@ -1,12 +1,12 @@
-require'nvim_lsp'.tsserver.setup{}
-require'nvim_lsp'.sumneko_lua.setup{}
-require'nvim_lsp'.vimls.setup{}
-require'nvim_lsp'.html.setup{}
-require'nvim_lsp'.gopls.setup{}
-require'nvim_lsp'.solargraph.setup{}
-require'nvim_lsp'.pyls.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.sumneko_lua.setup{}
+require'lspconfig'.vimls.setup{}
+require'lspconfig'.html.setup{}
+require'lspconfig'.gopls.setup{}
+require'lspconfig'.solargraph.setup{}
+require'lspconfig'.pyls.setup{}
 
-require'nvim_lsp'.diagnosticls.setup{
+require'lspconfig'.diagnosticls.setup{
   filetypes = { 'javascript', 'javascriptreact', 'typescript', 'typescriptreact', 'css', 'scss', 'markdown', 'pandoc' },
   init_options = {
     linters = {
