@@ -24,3 +24,7 @@ inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
   \ completion#trigger_completion()
+
+let g:UltiSnipsExpandTrigger="<c-+>"
+let g:UltiSnipsJumpForwardTrigger="<c-->"
+let g:UltiSnipsJumpBackwardTrigger="<c-->"
