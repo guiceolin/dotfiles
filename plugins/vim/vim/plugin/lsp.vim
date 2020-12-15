@@ -1,13 +1,3 @@
-lua <<EOF
-  require'nvim_lsp'.tsserver.setup{}
-  require'nvim_lsp'.sumneko_lua.setup{}
-  require'nvim_lsp'.vimls.setup{}
-  require'nvim_lsp'.html.setup{}
-  require'nvim_lsp'.gopls.setup{}
-  require'nvim_lsp'.solargraph.setup{}
-  require'nvim_lsp'.pyls.setup{}
-EOF
-
 nnoremap <silent> gd    <cmd>lua vim.lsp.buf.declaration()<CR>
 nnoremap <silent> <c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 nnoremap <silent> K     <cmd>lua vim.lsp.buf.hover()<CR>

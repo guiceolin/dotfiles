@@ -6,6 +6,7 @@ scriptencoding utf-8
 
 "Load Plugins
 source ~/.vim/.vimrc-vundle
+lua require('init')
 
 set backspace=indent,eol,start
 set history=1000
