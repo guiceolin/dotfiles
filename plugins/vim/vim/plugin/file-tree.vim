@@ -29,7 +29,7 @@ nnoremap <leader>r :LuaTreeRefresh<CR>
 nnoremap <leader>n :LuaTreeFindFile<CR>
 " LuaTreeOpen and LuaTreeClose are also available if you need them
 
-set termguicolors " this variable must be enabled for colors to be applied properly
+"set termguicolors " this variable must be enabled for colors to be applied properly
 
 " a list of groups can be found at `:help lua_tree_highlight`
 highlight LuaTreeFolderIcon guibg=blue
