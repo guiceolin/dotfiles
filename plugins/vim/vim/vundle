@@ -49,3 +49,5 @@ Plug 'nvim-lua/telescope.nvim'
 
 call plug#end()
 filetype plugin indent on    " required
+
+"" vim: set ft=vim:
