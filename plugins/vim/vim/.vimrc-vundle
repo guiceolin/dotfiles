@@ -10,28 +10,22 @@ call plug#begin('~/.vim/plugged')
 Plug 'kyazdani42/nvim-web-devicons' " for file icons
 Plug 'kyazdani42/nvim-tree.lua'
 Plug 'mhinz/vim-startify'
-" Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-" Plug 'junegunn/fzf.vim'
 
 " UI Additions
 Plug 'ryanoasis/vim-devicons'
-"Plug 'itchyny/lightline.vim'
 Plug 'datwaft/bubbly.nvim'
 Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
-"Plug 'sainnhe/edge'
 Plug 'mhinz/vim-signify'
+Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 " Commands
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-dispatch'
 Plug 'gorkunov/smartpairs.vim'
 
 " Automatic Helpers
 Plug 'Raimondi/delimitMate'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-obsession'
 
 " Snippets
@@ -42,20 +36,12 @@ Plug 'joaohkfaria/vim-jest-snippets'
 
 " Language Additions
 Plug 'sheerun/vim-polyglot'
-
-" Other Languages
 Plug 'hail2u/vim-css3-syntax'
-"Plug 'ap/vim-css-color'
-Plug 'rrethy/vim-hexokinase', { 'do': 'make hexokinase' }
 
 Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 
 " LSP
 Plug 'neovim/nvim-lspconfig'
-
-" Libraries
-" Plug 'tpope/vim-repeat'
-" Plug 'Shougo/vimproc'
 
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
