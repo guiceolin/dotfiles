@@ -38,8 +38,6 @@ Plug 'joaohkfaria/vim-jest-snippets'
 Plug 'sheerun/vim-polyglot'
 Plug 'hail2u/vim-css3-syntax'
 
-Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
-
 " LSP
 Plug 'neovim/nvim-lspconfig'
 
