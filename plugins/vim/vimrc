@@ -79,19 +79,11 @@ noremap Q gq
 "make Y consistent with C and D
 nnoremap Y y$
 
-"bindings for ragtag
-inoremap <M-o>       <Esc>o
-inoremap <C-j>       <Down>
-let g:ragtag_global_maps = 1
-
 "key mapping for vimgrep result navigation
 map <A-o> :copen<CR>
 map <A-q> :cclose<CR>
 map <A-j> :cnext<CR>
 map <A-k> :cprevious<CR>
-
-"key mapping for Gundo
-nnoremap <F4> :GundoToggle<CR>
 
 "jump to last cursor position when opening a file
 "dont do it when writing a commit log entry
@@ -106,10 +98,6 @@ function! SetCursorPosition()
 endfunction
 
 autocmd BufWritePre * :%s/\s\+$//e
-
-"let g:unite_force_overwrite_statusline = 0
-"let g:vimfiler_force_overwrite_statusline = 0
-"let g:vimshell_force_overwrite_statusline = 0
 
 " AUTO set paste MODE
 " https://coderwall.com/p/if9mda/automatically-set-paste-mode-in-vim-when-pasting-in-insert-mode
