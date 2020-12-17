@@ -3,7 +3,7 @@ let &packpath = &runtimepath
 
 let g:python3_host_prog = expand('~/.local/.venv/bin/python3')
 
-lua require('plugins')
+lua require('init')
 filetype plugin indent on    " required
 
 source ~/.vimrc

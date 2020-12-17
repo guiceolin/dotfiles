@@ -1,3 +1,3 @@
+require "plugins"
 require "finder"
 require "lsp"
-require "statusline"
