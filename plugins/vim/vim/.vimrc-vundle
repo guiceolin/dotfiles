@@ -15,7 +15,8 @@ Plug 'mhinz/vim-startify'
 
 " UI Additions
 Plug 'ryanoasis/vim-devicons'
-Plug 'itchyny/lightline.vim'
+"Plug 'itchyny/lightline.vim'
+Plug 'datwaft/bubbly.nvim'
 Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 "Plug 'sainnhe/edge'
