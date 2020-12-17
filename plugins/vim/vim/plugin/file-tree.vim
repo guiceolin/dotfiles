@@ -27,14 +27,7 @@ let g:lua_tree_icons = {
 nnoremap <leader>p :LuaTreeToggle<CR>
 nnoremap <leader>r :LuaTreeRefresh<CR>
 nnoremap <leader>n :LuaTreeFindFile<CR>
-" LuaTreeOpen and LuaTreeClose are also available if you need them
 
-"set termguicolors " this variable must be enabled for colors to be applied properly
-
-" a list of groups can be found at `:help lua_tree_highlight`
-highlight LuaTreeFolderIcon guibg=blue
-
-"autocmd BufNew,BufEnter LuaTree :setlocal nowrap
 augroup WrapLineInLuaTree
     autocmd!
     autocmd FileType LuaTree setlocal nowrap
