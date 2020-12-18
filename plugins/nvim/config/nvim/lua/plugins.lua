@@ -21,7 +21,7 @@ return require('packer').startup(function()
   use 'datwaft/bubbly.nvim'
   use 'morhetz/gruvbox'
   use 'mhinz/vim-signify'
-  use { 'rrethy/vim-hexokinase', { run = 'make hexokinase' } }
+  use { 'rrethy/vim-hexokinase', run = 'make hexokinase' }
 
   -- " Commands
   use 'tpope/vim-commentary'
