@@ -31,5 +31,6 @@ nnoremap <leader>n :LuaTreeFindFile<CR>
 augroup WrapLineInLuaTree
     autocmd!
     autocmd FileType LuaTree setlocal nowrap
+    autocmd SessionLoadPost LuaTree bw
 augroup END
 
