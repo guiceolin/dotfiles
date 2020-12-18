@@ -1,23 +1,19 @@
--- luacheck: globals vim use
-local execute = vim.api.nvim_command
-local fn = vim.fn
-
-local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
-
-if fn.empty(fn.glob(install_path)) > 0 then
-  execute('!git clone https://github.com/wbthomason/packer.nvim '..install_path)
-  execute 'packadd packer.nvim'
-end
+vim.cmd [[packadd packer.nvim]]
 
 return require('packer').startup(function()
   -- Packer can manage itself as an optional plugin
   use { 'wbthomason/packer.nvim' }
 
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
+  -- Debug tool
+  -- use 'bfredl/nvim-luadev'
+
+  use {
+    'kyazdani42/nvim-tree.lua' ,
+    cmd = { 'LuaTreeToggle', 'LuaTreeOpen', 'LuaTreeClose' },
+    requires = { 'kyazdani42/nvim-web-devicons' }
+  }
   use 'mhinz/vim-startify'
 
-  use 'ryanoasis/vim-devicons'
   use 'datwaft/bubbly.nvim'
   use 'morhetz/gruvbox'
   use 'mhinz/vim-signify'
@@ -46,7 +42,8 @@ return require('packer').startup(function()
   -- " LSP
   use 'neovim/nvim-lspconfig'
 
-  use 'nvim-lua/popup.nvim'
-  use 'nvim-lua/plenary.nvim'
-  use 'nvim-lua/telescope.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
 end)
