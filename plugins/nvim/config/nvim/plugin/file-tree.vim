@@ -31,6 +31,6 @@ nnoremap <leader>n :LuaTreeFindFile<CR>
 augroup WrapLineInLuaTree
     autocmd!
     autocmd FileType LuaTree setlocal nowrap
-    autocmd SessionLoadPost LuaTree bw
+    autocmd VimLeavePre * lua require'tree'.close()
 augroup END
 

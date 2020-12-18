@@ -3,7 +3,6 @@
 
 let g:python3_host_prog = expand('~/.local/.venv/bin/python3')
 
-autocmd SessionLoadPost LuaTree bw
 lua require('init')
 "filetype plugin indent on    " required
 
