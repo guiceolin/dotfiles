@@ -9,7 +9,7 @@ return require('packer').startup(function()
 
   use {
     'kyazdani42/nvim-tree.lua' ,
-    cmd = { 'LuaTreeToggle', 'LuaTreeOpen', 'LuaTreeClose' },
+    cmd = { 'NvimTreeToggle', 'NvimTreeOpen', 'NvimTreeClose' },
     requires = { 'kyazdani42/nvim-web-devicons' }
   }
   use 'mhinz/vim-startify'
