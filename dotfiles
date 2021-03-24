@@ -1,0 +1,34 @@
+#!/usr/bin/env zsh
+
+usage() {
+  echo "USAGE: myscript COMMAND plugin"
+  exit 1
+}
+
+enable() {
+  if [ $# -lt 1 ]; then usage; fi
+
+  plugin_dir=$DOTFILES/plugins/$1
+  if [ -d $plugin_dir ]; then
+    ln -s $plugin_dir $HOME/.config/dotfiles/enabled/
+
+    install_file=$plugin_dir/install.sh
+    if [ -e $install_file ]; then
+      . $install_file
+    fi
+  fi
+  exit 0
+}
+
+if [ $# -lt 1 ]; then usage; fi
+
+case "$1" in
+  enable)
+    shift
+    enable $1
+    ;;
+
+  *)
+    echo "dotfile: Wrong command";
+    exit 1;
+esac
