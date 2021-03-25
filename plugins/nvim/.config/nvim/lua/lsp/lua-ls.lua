@@ -1,5 +1,5 @@
 USER = vim.fn.expand('$USER')
-DIR = os.getenv('DOTFILES') .. "/plugins/nvim/lua-language-server"
+DIR = os.getenv('DOTFILES') .. "/plugins/nvim/lsp/lua-language-server"
 
 local sumneko_root_path = DIR
 local sumneko_binary = ""

@@ -7,4 +7,4 @@ plugins/maven/maven
 plugins/vim/vim/plugged/
 plugins/vim/vim/autoload/plug.vim
 plugins/git/bin/
-plugins/nvim/lua-language-server
+plugins/nvim/lsp

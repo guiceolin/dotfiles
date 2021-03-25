@@ -27,7 +27,7 @@ git clone https://github.com/wbthomason/packer.nvim\
 
 # Install LSPs
 
-mkdir -p $DOTFILES/plugins/nvim/.config/lsp
+mkdir -p $DOTFILES/plugins/nvim/lsp
 
 pushd $DOTFILES/plugins/nvim/lsp
 git clone https://github.com/sumneko/lua-language-server
