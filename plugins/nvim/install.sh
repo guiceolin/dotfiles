@@ -24,3 +24,19 @@ ln -sf $DOTFILES/plugins/nvim/.config/nvim ~/.config
 
 git clone https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
+# Install LSPs
+
+mkdir -p $DOTFILES/plugins/nvim/.config/lsp
+
+pushd $DOTFILES/plugins/nvim/lsp
+git clone https://github.com/sumneko/lua-language-server
+cd lua-language-server
+git submodule update --init --recursive
+cd 3rd/luamake
+ninja -f ninja/macos.ninja
+cd ../..
+./3rd/luamake/luamake rebuild
+cd ..
+popd
+

@@ -31,7 +31,16 @@ local function try_loadstring(s, component, name)
   return result
 end
 
-_G.packer_plugins = {}
+_G.packer_plugins = {
+  ["nvim-lspconfig"] = {
+    loaded = true,
+    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+  },
+  ["packer.nvim"] = {
+    loaded = true,
+    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/packer.nvim"
+  }
+}
 
 END
 
