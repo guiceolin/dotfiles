@@ -22,7 +22,7 @@ sudo /usr/bin/env bash -c "cat > /Library/LaunchAgents/org.custom.tilde-switch.p
 </plist>
 EOF
 
-sudo launchctl load -w -- $DOTFILES/plugins/macos/tilde-switch.plist
+sudo launchctl load -w -- /Library/LaunchAgents/org.custom.tilde-switch.plist 
 
 
 # # ~/.macos — https://mths.be/macos
@@ -45,46 +45,46 @@ sudo launchctl load -w -- $DOTFILES/plugins/macos/tilde-switch.plist
 # # Show percent on battery status
 # defaults write com.apple.menuextra.battery ShowPercent -string "YES"
 # 
-# ###############################################################################
-# # Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
-# ###############################################################################
-# 
-# # Trackpad: enable tap to click for this user and for the login screen
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
-# defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 2
-# defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 2
-# 
-# # Enable 3-finger drag. (Moving with 3 fingers in any window "chrome" moves the window.)
-# defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
-# defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
-# 
-# 
-# # Enable full keyboard access for all controls
-# # (e.g. enable Tab in modal dialogs)
-# defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
-# 
-# # Disable press-and-hold for keys in favor of key repeat
-# defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
-# 
-# # Set a blazingly fast keyboard repeat rate
-# defaults write NSGlobalDomain KeyRepeat -int 1
-# 
-# # set shorter repeat start time
-# defaults write NSGlobalDomain InitialKeyRepeat -int 12
-# 
-# # Set language and text formats
-# # Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
-# # `Inches`, `en_GB` with `en_US`, and `true` with `false`.
-# defaults write NSGlobalDomain AppleLanguages -array "en" "pt"
-# defaults write NSGlobalDomain AppleLocale -string "pt_BR@currency=BRL"
-# defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
-# defaults write NSGlobalDomain AppleMetricUnits -bool true
-# 
-# # Set the timezone; see `sudo systemsetup -listtimezones` for other values
-# sudo systemsetup -settimezone "America/Sao_Paulo" > /dev/null
-# 
-# # Disable auto-correct
-# defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Trackpad: enable tap to click for this user and for the login screen
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 2
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 2
+
+# Enable 3-finger drag. (Moving with 3 fingers in any window "chrome" moves the window.)
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad TrackpadThreeFingerDrag -bool true
+defaults write com.apple.AppleMultitouchTrackpad TrackpadThreeFingerDrag -bool true
+
+
+# Enable full keyboard access for all controls
+# (e.g. enable Tab in modal dialogs)
+defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+
+# set shorter repeat start time
+defaults write NSGlobalDomain InitialKeyRepeat -int 12
+
+# Set language and text formats
+# Note: if you’re in the US, replace `EUR` with `USD`, `Centimeters` with
+# `Inches`, `en_GB` with `en_US`, and `true` with `false`.
+defaults write NSGlobalDomain AppleLanguages -array "en" "pt"
+defaults write NSGlobalDomain AppleLocale -string "pt_BR@currency=BRL"
+defaults write NSGlobalDomain AppleMeasurementUnits -string "Centimeters"
+defaults write NSGlobalDomain AppleMetricUnits -bool true
+
+# Set the timezone; see `sudo systemsetup -listtimezones` for other values
+sudo systemsetup -settimezone "America/Sao_Paulo" > /dev/null
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 # 
 # ###############################################################################
 # # Screen                                                                      #
