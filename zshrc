@@ -6,7 +6,7 @@ export DOTFILES=$HOME/dotfiles
 # done
 
 ## Source plugins
-for file in $DOTFILES_CONFIG/enabled/**/*.plugin.zsh(N); do
+for file in $DOTFILES_CONFIG/enabled/***/*.plugin.zsh(N); do
   source $file
 done
 
