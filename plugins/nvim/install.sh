@@ -40,6 +40,10 @@ cd lua
 if [ ! -d "./lua-language-server" ]; then
   git clone https://github.com/sumneko/lua-language-server
   cd lua-language-server
+
+  # TODO remove version lock
+  git reset 50fe3c6 --hard
+
   git submodule update --init --recursive
   cd 3rd/luamake
   ninja -f ninja/macos.ninja
