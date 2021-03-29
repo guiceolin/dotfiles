@@ -1,5 +1,8 @@
-JAR="$DOTFILES/plugins/nvim/lsp/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar"
+JAR="$DOTFILES/plugins/nvim/lsp/java/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar"
 GRADLE_HOME=$HOME/gradle $HOME/.asdf/installs/java/openjdk-15/bin/java \
+  -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044 \
+  -javaagent:$DOTFILES/plugins/nvin/lsp/java/lombok.jar \
+  -Xbootclasspath/a:$DOTFILES/plugins/nvim/lsp/java/lombok.jar \
   -Declipse.application=org.eclipse.jdt.ls.core.id1 \
   -Dosgi.bundles.defaultStartLevel=4 \
   -Declipse.product=org.eclipse.jdt.ls.core.product \
@@ -8,7 +11,7 @@ GRADLE_HOME=$HOME/gradle $HOME/.asdf/installs/java/openjdk-15/bin/java \
   -Xms1g \
   -Xmx2G \
   -jar $(echo "$JAR") \
-  -configuration "$DOTFILES/plugins/nvim/lsp/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_mac" \
+  -configuration "$DOTFILES/plugins/nvim/lsp/java/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/config_mac" \
   -data "${1:-$HOME/workspace}" \
   --add-modules=ALL-SYSTEM \
   --add-opens java.base/java.util=ALL-UNNAMED \

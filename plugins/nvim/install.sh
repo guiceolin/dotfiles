@@ -35,6 +35,8 @@ mkdir -p $DOTFILES/plugins/nvim/lsp
 pushd $DOTFILES/plugins/nvim/lsp
 
 # Lua LSP
+mkdir -p lua
+cd lua
 if [ ! -d "./lua-language-server" ]; then
   git clone https://github.com/sumneko/lua-language-server
   cd lua-language-server
@@ -45,14 +47,19 @@ if [ ! -d "./lua-language-server" ]; then
   ./3rd/luamake/luamake rebuild
   cd ..
 fi
+cd ..
 
 # Java JDTLS
+mkdir -p java
+cd java
 if [ ! -d './eclipse.jdt.ls' ]; then
+  wget https://projectlombok.org/downloads/lombok.jar
   git clone https://github.com/eclipse/eclipse.jdt.ls.git
   cd eclipse.jdt.ls
-  ./mvnw clean verify
+  ./mvnw clean verify -DskipTests
   cd ..
 fi
+cd ..
 ln -s $DOTFILES/plugins/nvim/bin/java-lsp $HOME/.local/bin
 
 popd
