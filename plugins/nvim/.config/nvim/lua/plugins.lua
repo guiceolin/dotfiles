@@ -4,6 +4,7 @@ return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
 
   use 'neovim/nvim-lspconfig'
+  use 'glepnir/lspsaga.nvim'
 
   use 'mfussenegger/nvim-jdtls'
   use 'morhetz/gruvbox'
