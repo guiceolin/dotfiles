@@ -7,4 +7,5 @@ return require('packer').startup(function(use)
 
   use 'mfussenegger/nvim-jdtls'
   use 'morhetz/gruvbox'
+  use 'mhinz/vim-startify'
 end)
