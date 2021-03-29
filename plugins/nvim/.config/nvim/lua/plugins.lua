@@ -10,4 +10,8 @@ return require('packer').startup(function(use)
   use 'morhetz/gruvbox'
   use 'mhinz/vim-startify'
   use 'tpope/vim-obsession'
+  use {
+    'kyazdani42/nvim-tree.lua',
+    requires = {{'kyazdani42/nvim-web-devicons'}}
+  }
 end)
