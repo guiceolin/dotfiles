@@ -4,7 +4,7 @@ source ~/.config/nvim/general/visual.vim
 
 lua require('plugins.startify')
 lua require('plugins.lspsaga')
-lua require('nvim-tree')
+lua require('plugins.nvim-tree')
 
 lua require('lsp.lua-ls')
 lua require('lsp.java-lsp')
