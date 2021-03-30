@@ -12,8 +12,13 @@ else
     print("Unsupported system for sumneko")
 end
 
+local on_attach = function(client, buffnr)
+  require'lsp.keymap'.set_keymaps(client, buffnr)
+end
+
 require'lspconfig'.sumneko_lua.setup {
     cmd = {sumneko_binary, "-E", sumneko_root_path .. "/main.lua"},
+    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = {
