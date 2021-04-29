@@ -8,6 +8,7 @@ lua require('plugins.nvim-tree')
 
 lua require('lsp.lua-ls')
 lua require('lsp.java-lsp')
+lua require('lsp.js-lsp')
 
 source ~/.config/nvim/keymapping/navigation.vim
 source ~/.config/nvim/keymapping/lsp.vim
