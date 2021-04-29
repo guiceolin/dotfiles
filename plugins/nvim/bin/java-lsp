@@ -1,6 +1,7 @@
+#-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044 \
+
 JAR="$DOTFILES/plugins/nvim/lsp/java/eclipse.jdt.ls/org.eclipse.jdt.ls.product/target/repository/plugins/org.eclipse.equinox.launcher_*.jar"
 GRADLE_HOME=$HOME/gradle $HOME/.asdf/installs/java/openjdk-15/bin/java \
-  -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=1044 \
   -javaagent:$DOTFILES/plugins/nvim/lsp/java/lombok.jar \
   -Xbootclasspath/a:$DOTFILES/plugins/nvim/lsp/java/lombok.jar \
   -Declipse.application=org.eclipse.jdt.ls.core.id1 \
