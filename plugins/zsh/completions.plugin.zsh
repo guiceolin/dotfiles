@@ -1,2 +1,2 @@
 rm -f ~/.zcompdump
-autoload -U compinit && compinit
+autoload -U compinit && compinit -u
