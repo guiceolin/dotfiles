@@ -5,6 +5,10 @@ return require('packer').startup(function(use)
 
   use 'neovim/nvim-lspconfig'
   use 'glepnir/lspsaga.nvim'
+  use {
+    'nvim-telescope/telescope.nvim',
+    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+  }
 
   use 'mfussenegger/nvim-jdtls'
   use 'morhetz/gruvbox'
