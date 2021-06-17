@@ -1,3 +1,5 @@
+set completeopt=menuone,noselect
+
 lua require('plugins')
 
 source ~/.config/nvim/general/visual.vim
@@ -9,6 +11,8 @@ lua require('plugins.nvim-tree')
 lua require('lsp.lua-ls')
 lua require('lsp.java-lsp')
 lua require('lsp.js-lsp')
+
+lua require('plugins.nvim-compe')
 
 source ~/.config/nvim/keymapping/navigation.vim
 source ~/.config/nvim/keymapping/lsp.vim
