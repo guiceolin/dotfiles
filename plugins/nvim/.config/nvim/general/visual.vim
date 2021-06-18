@@ -18,5 +18,5 @@ set background=dark
 
 let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_palette = 'original'
-let g:gruvbox_material_background = 'soft'
+let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
