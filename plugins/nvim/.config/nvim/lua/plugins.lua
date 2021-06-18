@@ -20,4 +20,12 @@ return require('packer').startup(function(use)
   }
 
   use 'hrsh7th/nvim-compe'
+
+  use {
+    'lewis6991/gitsigns.nvim',
+    requires = { 'nvim-lua/plenary.nvim' },
+    config = function()
+        require('gitsigns').setup()
+    end
+  }
 end)
