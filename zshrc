@@ -1,9 +1,9 @@
 export DOTFILES=$HOME/dotfiles
 
-# #### Source Remote plugins
-# for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh; do
-#   source $file
-# done
+#### Source Remote plugins
+for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh; do
+  source $file
+done
 
 ## Source plugins
 for file in $DOTFILES_CONFIG/enabled/***/*.plugin.zsh(N); do
