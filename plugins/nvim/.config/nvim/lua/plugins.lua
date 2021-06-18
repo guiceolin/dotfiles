@@ -11,7 +11,7 @@ return require('packer').startup(function(use)
   }
 
   use 'mfussenegger/nvim-jdtls'
-  use 'morhetz/gruvbox'
+  use 'sainnhe/gruvbox-material'
   use 'mhinz/vim-startify'
   use 'tpope/vim-obsession'
   use {

@@ -77,9 +77,9 @@ _G.packer_plugins = {
     loaded = true,
     path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
-  gruvbox = {
+  ["gruvbox-material"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/gruvbox"
+    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/gruvbox-material"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
