@@ -29,8 +29,9 @@ if [ ! -d $PACKER_PATH ]; then
 fi
 
 # Install LSPs
-
-mkdir -p $DOTFILES/plugins/nvim/lsp
+if [ ! -d $DOTFILES/plugins/nvim/lsp ]; then 
+  mkdir -p $DOTFILES/plugins/nvim/lsp
+fi
 
 pushd $DOTFILES/plugins/nvim/lsp
 
@@ -61,6 +62,10 @@ if [ ! -d './eclipse.jdt.ls' ]; then
   git clone https://github.com/eclipse/eclipse.jdt.ls.git
   cd eclipse.jdt.ls
   ./mvnw clean verify -DskipTests
+  cd ..
+  git clone https://github.com/microsoft/java-debug
+  cd java-debug
+  ./mvnw clean install -DskipTests
   cd ..
 fi
 cd ..
