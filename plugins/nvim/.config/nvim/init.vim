@@ -15,6 +15,7 @@ lua require('lsp.java-lsp')
 lua require('lsp.js-lsp')
 
 lua require('plugins.nvim-compe')
+lua require('plugins.autopairs')
 
 source ~/.config/nvim/keymapping/navigation.vim
 source ~/.config/nvim/keymapping/lsp.vim
