@@ -13,7 +13,7 @@ return require('packer').startup(function(use)
   use 'mfussenegger/nvim-jdtls'
   use 'sainnhe/gruvbox-material'
   use 'mhinz/vim-startify'
-  use 'tpope/vim-obsession'
+  use 'rmagatti/auto-session'
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {{'kyazdani42/nvim-web-devicons'}}
