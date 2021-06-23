@@ -137,14 +137,6 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
-  },
-  ["vim-obsession"] = {
-    loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/vim-obsession"
-  },
-  ["vim-startify"] = {
-    loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/vim-startify"
   }
 }
 

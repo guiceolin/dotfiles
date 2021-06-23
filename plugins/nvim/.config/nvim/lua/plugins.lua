@@ -12,7 +12,6 @@ return require('packer').startup(function(use)
 
   use 'mfussenegger/nvim-jdtls'
   use 'sainnhe/gruvbox-material'
-  use 'mhinz/vim-startify'
   use 'rmagatti/auto-session'
   use {
     'kyazdani42/nvim-tree.lua',
