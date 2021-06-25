@@ -5,7 +5,6 @@ lua require('plugins')
 source ~/.config/nvim/general/visual.vim
 source ~/.config/nvim/general/basic.vim
 
-lua require('plugins.startify')
 lua require('plugins.lspsaga')
 lua require('plugins.nvim-tree')
 lua require('plugins.treesitter')
