@@ -1,1 +1,1 @@
-export BAT_THEME=gruvbox
+export BAT_THEME=gruvbox-dark
