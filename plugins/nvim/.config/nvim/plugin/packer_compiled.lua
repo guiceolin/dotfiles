@@ -1,17 +1,14 @@
-" Automatically generated packer.nvim plugin loader code
+-- Automatically generated packer.nvim plugin loader code
 
-if !has('nvim-0.5')
-  echohl WarningMsg
-  echom "Invalid Neovim version for packer.nvim!"
-  echohl None
-  finish
-endif
+if vim.api.nvim_call_function('has', {'nvim-0.5'}) ~= 1 then
+  vim.api.nvim_command('echohl WarningMsg | echom "Invalid Neovim version for packer.nvim! | echohl None"')
+  return
+end
 
-packadd packer.nvim
+vim.api.nvim_command('packadd packer.nvim')
 
-try
+local no_errors, error_msg = pcall(function()
 
-lua << END
   local time
   local profile_info
   local should_profile = false
@@ -90,17 +87,16 @@ _G.packer_plugins = {
     path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["nvim-autopairs"] = {
-    config = { "\27LJ\2\n\1\0\0\4\0\b\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\2\0005\2\6\0005\3\5\0=\3\a\2B\0\2\1K\0\1\0\14autopairs\1\0\0\1\0\1\venable\2\28nvim-treesitter.configs\1\0\1\rcheck_ts\2\nsetup\19nvim-autopairs\frequire\0" },
     loaded = true,
     path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+  },
+  ["nvim-bqf"] = {
+    loaded = true,
+    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-bqf"
   },
   ["nvim-compe"] = {
     loaded = true,
     path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-compe"
-  },
-  ["nvim-dap"] = {
-    loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-dap"
   },
   ["nvim-jdtls"] = {
     loaded = true,
@@ -145,17 +141,10 @@ time([[Defining packer_plugins]], false)
 time([[Config for gitsigns.nvim]], true)
 try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
--- Config for: nvim-autopairs
-time([[Config for nvim-autopairs]], true)
-try_loadstring("\27LJ\2\n\1\0\0\4\0\b\0\0156\0\0\0'\2\1\0B\0\2\0029\0\2\0005\2\3\0B\0\2\0016\0\0\0'\2\4\0B\0\2\0029\0\2\0005\2\6\0005\3\5\0=\3\a\2B\0\2\1K\0\1\0\14autopairs\1\0\0\1\0\1\venable\2\28nvim-treesitter.configs\1\0\1\rcheck_ts\2\nsetup\19nvim-autopairs\frequire\0", "config", "nvim-autopairs")
-time([[Config for nvim-autopairs]], false)
 if should_profile then save_profiles() end
 
-END
+end)
 
-catch
-  echohl ErrorMsg
-  echom "Error in packer_compiled: " .. v:exception
-  echom "Please check your config for correctness"
-  echohl None
-endtry
+if not no_errors then
+  vim.api.nvim_command('echohl ErrorMsg | echom "Error in packer_compiled: '..error_msg..'" | echom "Please check your config for correctness" | echohl None')
+end
