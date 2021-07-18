@@ -87,15 +87,3 @@ zstyle ':completion:*:*:*:users' ignored-patterns \
   operator pcap polkitd postfix postgres privoxy pulse pvm quagga radvd \
   rpc rpcuser rpm rtkit scard shutdown squid sshd statd svn sync tftp \
   usbmux uucp vcsa wwwrun xfs '_*'
-
-# Key bindings
-# Emacs mode
-bindkey -e
-# Bind ctrl-left / ctrl-right
-bindkey "\e[1;5D" backward-word
-bindkey "\e[1;5C" forward-word
-# Bind home / end
-bindkey  "^[[H"   beginning-of-line
-bindkey  "^[[F"   end-of-line
-
-
