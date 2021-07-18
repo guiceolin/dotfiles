@@ -22,7 +22,7 @@ setopt hist_ignore_space      # remove command line from history list when first
 setopt hist_find_no_dups      # when searching history don't display results already cycled through twice
 setopt hist_reduce_blanks     # remove extra blanks from each command line being added to history
 setopt hist_verify            # don't execute, just expand history
-setopt share_history          # imports new commands and appends typed commands to history
+setopt nosharehistory
 setopt hist_no_store          # remove the history (fc -l) command from the history list when invoked
 setopt long_list_jobs         # list jobs in the long format by default
 
