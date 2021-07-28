@@ -44,8 +44,8 @@ local function save_profiles(threshold)
 end
 
 time([[Luarocks path setup]], true)
-local package_path_str = "/Users/guiceolin/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?.lua;/Users/guiceolin/.cache/nvim/packer_hererocks/2.1.0-beta3/share/lua/5.1/?/init.lua;/Users/guiceolin/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?.lua;/Users/guiceolin/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/luarocks/rocks-5.1/?/init.lua"
-local install_cpath_pattern = "/Users/guiceolin/.cache/nvim/packer_hererocks/2.1.0-beta3/lib/lua/5.1/?.so"
+local package_path_str = "/home/guiceolin/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?.lua;/home/guiceolin/.cache/nvim/packer_hererocks/2.0.5/share/lua/5.1/?/init.lua;/home/guiceolin/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?.lua;/home/guiceolin/.cache/nvim/packer_hererocks/2.0.5/lib/luarocks/rocks-5.1/?/init.lua"
+local install_cpath_pattern = "/home/guiceolin/.cache/nvim/packer_hererocks/2.0.5/lib/lua/5.1/?.so"
 if not string.find(package.path, package_path_str, 1, true) then
   package.path = package.path .. ';' .. package_path_str
 end
@@ -71,75 +71,75 @@ time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
   ["auto-session"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/auto-session"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/auto-session"
   },
   ["gitsigns.nvim"] = {
-    config = { "\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0" },
+    config = { "\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0" },
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/gitsigns.nvim"
   },
   ["gruvbox-material"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/gruvbox-material"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/gruvbox-material"
   },
   ["lspsaga.nvim"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-autopairs"
   },
   ["nvim-bqf"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-bqf"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-bqf"
   },
   ["nvim-compe"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-compe"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-compe"
   },
   ["nvim-jdtls"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-jdtls"
   },
   ["nvim-lspconfig"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-lspconfig"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-tree.lua"
   },
   ["nvim-treesitter"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-treesitter"
   },
   ["nvim-web-devicons"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/nvim-web-devicons"
   },
   ["packer.nvim"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/packer.nvim"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/packer.nvim"
   },
   ["plenary.nvim"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/plenary.nvim"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/plenary.nvim"
   },
   ["popup.nvim"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/popup.nvim"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/popup.nvim"
   },
   ["telescope.nvim"] = {
     loaded = true,
-    path = "/Users/guiceolin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
   }
 }
 
 time([[Defining packer_plugins]], false)
 -- Config for: gitsigns.nvim
 time([[Config for gitsigns.nvim]], true)
-try_loadstring("\27LJ\2\n6\0\0\3\0\3\0\0066\0\0\0'\2\1\0B\0\2\0029\0\2\0B\0\1\1K\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
+try_loadstring("\27LJ\1\0026\0\0\2\0\3\0\0064\0\0\0%\1\1\0>\0\2\0027\0\2\0>\0\1\1G\0\1\0\nsetup\rgitsigns\frequire\0", "config", "gitsigns.nvim")
 time([[Config for gitsigns.nvim]], false)
 if should_profile then save_profiles() end
 
