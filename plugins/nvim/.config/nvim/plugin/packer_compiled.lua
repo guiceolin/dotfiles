@@ -82,6 +82,10 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/gruvbox-material"
   },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim"
+  },
   ["lspsaga.nvim"] = {
     loaded = true,
     path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/lspsaga.nvim"

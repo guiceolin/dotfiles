@@ -29,6 +29,8 @@ return require('packer').startup(function(use)
         require('gitsigns').setup()
     end
   }
+
+  use "lukas-reineke/indent-blankline.nvim"
   use { 'nvim-treesitter/nvim-treesitter' }
   use { 'windwp/nvim-autopairs' }
 end)
