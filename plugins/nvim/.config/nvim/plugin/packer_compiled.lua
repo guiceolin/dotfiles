@@ -137,6 +137,10 @@ _G.packer_plugins = {
   ["telescope.nvim"] = {
     loaded = true,
     path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/telescope.nvim"
+  },
+  ["vim-surround"] = {
+    loaded = true,
+    path = "/home/guiceolin/.local/share/nvim/site/pack/packer/start/vim-surround"
   }
 }
 

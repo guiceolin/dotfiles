@@ -33,4 +33,5 @@ return require('packer').startup(function(use)
   use "lukas-reineke/indent-blankline.nvim"
   use { 'nvim-treesitter/nvim-treesitter' }
   use { 'windwp/nvim-autopairs' }
+  use { 'tpope/vim-surround' }
 end)
