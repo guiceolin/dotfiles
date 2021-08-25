@@ -30,3 +30,5 @@ path=(
 )
 
 EDITOR=nvim
+
+export GTK_IM_MODULE=cedilla
