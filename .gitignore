@@ -8,3 +8,4 @@ plugins/vim/vim/plugged/
 plugins/vim/vim/autoload/plug.vim
 plugins/git/bin/
 plugins/nvim/lsp
+plugins/lsp-lua/lua-language-server
