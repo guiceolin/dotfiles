@@ -6,7 +6,20 @@ return require('packer').startup(function(use)
   use 'kevinhwang91/nvim-bqf'
 
   use 'neovim/nvim-lspconfig'
-  use 'glepnir/lspsaga.nvim'
+  use {
+    "glepnir/lspsaga.nvim",
+    opt = true,
+    branch = "main",
+    event = "LspAttach",
+    config = function()
+      require("lspsaga").setup({})
+    end,
+    requires = {
+      {"nvim-tree/nvim-web-devicons"},
+      --Please make sure you install markdown and markdown_inline parser
+      {"nvim-treesitter/nvim-treesitter"}
+    }
+  }
   use {
     'nvim-telescope/telescope.nvim',
     requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
