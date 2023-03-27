@@ -6,7 +6,6 @@ source ~/.config/nvim/general/commands.vim
 source ~/.config/nvim/general/visual.vim
 source ~/.config/nvim/general/basic.vim
 
-"lua require('plugins.lspsaga')
 lua require('plugins.nvim-tree')
 lua require('plugins.treesitter')
 
