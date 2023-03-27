@@ -36,24 +36,6 @@ fi
 pushd $DOTFILES/plugins/nvim/lsp
 
 # Lua LSP
-mkdir -p lua
-cd lua
-if [ ! -d "./lua-language-server" ]; then
-  git clone https://github.com/sumneko/lua-language-server
-  cd lua-language-server
-
-  # TODO remove version lock
-  git reset 50fe3c6 --hard
-
-  git submodule update --init --recursive
-  cd 3rd/luamake
-  compile/install.sh
-  cd ../..
-  ./3rd/luamake/luamake rebuild
-  cd ..
-fi
-cd ..
-
 # Java JDTLS
 mkdir -p java
 cd java
