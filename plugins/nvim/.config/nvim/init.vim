@@ -15,7 +15,6 @@ lua require('lsp.js-lsp')
 
 lua require('plugins.nvim-compe')
 lua require('plugins.autopairs')
-lua require('plugins.auto-sessions')
 lua require('plugins.indent-blankline')
 
 source ~/.config/nvim/keymapping/navigation.vim

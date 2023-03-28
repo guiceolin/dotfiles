@@ -15,22 +15,30 @@ return require('packer').startup(function(use)
       require("lspsaga").setup({})
     end,
     requires = {
-      {"nvim-tree/nvim-web-devicons"},
+      { "nvim-tree/nvim-web-devicons" },
       --Please make sure you install markdown and markdown_inline parser
-      {"nvim-treesitter/nvim-treesitter"}
+      { "nvim-treesitter/nvim-treesitter" }
     }
   }
   use {
     'nvim-telescope/telescope.nvim',
-    requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}
+    requires = { { 'nvim-lua/popup.nvim' }, { 'nvim-lua/plenary.nvim' } }
   }
 
   use 'mfussenegger/nvim-jdtls'
   use 'sainnhe/gruvbox-material'
-  use 'rmagatti/auto-session'
+  use {
+    'rmagatti/auto-session',
+    config = function()
+      require("auto-session").setup {
+        log_level = "error",
+        auto_session_suppress_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
+      }
+    end
+  }
   use {
     'nvim-tree/nvim-tree.lua',
-    requires = {{'nvim-tree/nvim-web-devicons'}}
+    requires = { { 'nvim-tree/nvim-web-devicons' } }
   }
 
   use 'hrsh7th/nvim-compe'
@@ -39,7 +47,7 @@ return require('packer').startup(function(use)
     'lewis6991/gitsigns.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     config = function()
-        require('gitsigns').setup()
+      require('gitsigns').setup()
     end
   }
 
