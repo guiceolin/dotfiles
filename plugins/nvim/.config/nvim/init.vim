@@ -19,4 +19,3 @@ lua require('plugins.auto-sessions')
 lua require('plugins.indent-blankline')
 
 source ~/.config/nvim/keymapping/navigation.vim
-source ~/.config/nvim/keymapping/lsp.vim
