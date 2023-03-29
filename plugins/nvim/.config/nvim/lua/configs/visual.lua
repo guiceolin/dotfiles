@@ -1,3 +1,4 @@
+vim.cmd [[
 set showcmd     "show incomplete cmds down the bottom
 
 set incsearch   "find the next match as we type the search
@@ -20,3 +21,4 @@ let g:gruvbox_material_disable_italic_comment = 1
 let g:gruvbox_material_palette = 'original'
 let g:gruvbox_material_background = 'hard'
 colorscheme gruvbox-material
+]]
