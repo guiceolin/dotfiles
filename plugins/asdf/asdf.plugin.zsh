@@ -1,7 +1,8 @@
-if [ -d "$HOME/.asdf" ]; then
+asdf_dir="${asdf_dir:-$HOME/.asdf}"
 
-  . $HOME/.asdf/asdf.sh
-
+if [[ -d $asdf_dir ]]; then
+  source $asdf_dir/asdf.sh
+  source $asdf_dir/completions/asdf.bash
 fi
 
 if [ -f "$HOME/.asdf/plugins/java/set-java-home.zsh" ]; then
