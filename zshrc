@@ -11,8 +11,10 @@ for file in $DOTFILES_CONFIG/enabled/***/*.plugin.zsh(N); do
   source $file
 done
 
+### THEMES
 zstyle :dotfiles:theme name guiceolin
 
+### Local Overrides
 if [[ -f "$HOME/.zshrc.local" ]] ; then
   source "$HOME/.zshrc.local"
 fi
