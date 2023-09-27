@@ -5,9 +5,6 @@ fi
 
 . $HOME/.asdf/asdf.sh
 
-fpath=(${ASDF_DIR}/completions $fpath)
-autoload -Uz compinit
-compinit
 
 # Install java plugin
 asdf plugin-add java https://github.com/halcyon/asdf-java.git

@@ -29,6 +29,9 @@ path=(
   $path
 )
 
-EDITOR=nvim
 
+### Extras
+EDITOR=nvim
 export GTK_IM_MODULE=cedilla
+autoload -Uz compinit
+compinit
