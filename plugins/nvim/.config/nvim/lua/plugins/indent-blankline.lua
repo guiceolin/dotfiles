@@ -1,5 +1,6 @@
 return {
   "lukas-reineke/indent-blankline.nvim",
+  main = "ibl",
   opts = {
     char = "▏",
     context_patterns = {
