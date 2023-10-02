@@ -1,0 +1,26 @@
+# vim:ft=zsh
+autoload -Uz _dotfiles_plugin_enable
+
+usage() {
+  echo "USAGE: myscript COMMAND plugin"
+  return 1
+}
+
+if [ $# -lt 1 ]; then usage; fi
+
+case "$1" in
+  enable)
+    shift
+    _dotfiles_plugin_enable $@
+    return 0
+    ;;
+
+  install)
+    shift
+    install $1
+    ;;
+
+  *)
+    echo "dotfile: Wrong command";
+    return 2;
+esac

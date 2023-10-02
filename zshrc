@@ -1,6 +1,3 @@
-export DOTFILES=$HOME/dotfiles
-export DOTFILES_CONFIG=$HOME/.config/dotfiles
-
 #### Source Remote plugins
 for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh(N); do
   source $file

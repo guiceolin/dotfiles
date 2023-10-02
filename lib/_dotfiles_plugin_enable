@@ -1,0 +1,50 @@
+# vim:ft=zsh
+
+local plugins_dir=$DOTFILES/plugins
+
+local flag_help flag_verbose flag_list
+local usage=(
+    "dotfiles enable [-h|--help]"
+    "dotfiles enable [-l|--list]"
+    "dotfiles enable [-v|--verbose] plugin_name"
+  )
+
+zmodload zsh/zutil
+zparseopts -D -F -K -- \
+  {h,-help}=flag_help \
+  {l,-list}=flag_list \
+  {v,-verbose}=flag_verbose || return 1
+
+[[ -z "$flag_help" ]] || { print -l $usage && return }
+
+### List option
+if [[ -v flag_list ]]; then
+  for d in $plugins_dir/*; do
+    echo "$d:t"
+  done
+  return 0
+fi
+
+### No plugin given
+if [ $# -lt 1 ]; then
+  print -l $usage
+  return -1
+fi
+
+### Plugin Given
+local plugin_dir=$plugins_dir/$1
+local install_file=$plugin_dir/install.sh
+
+
+if [ -d $plugin_dir ]; then
+  ln -s $plugin_dir $DOTFILES_CONFIG/enabled/
+
+  if [ -e $install_file ]; then
+    print "Installing $1"
+    . $install_file
+    return 0
+  fi
+else
+  print "Plugin $1 Not Found"
+  return -2
+fi
