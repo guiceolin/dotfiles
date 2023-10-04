@@ -14,5 +14,3 @@ ln -sf $PWD/zprofile $HOME/.zprofile
 
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.config/dotfiles/enabled/
-
-ln -s $PWD/dotfiles $HOME/.local/bin
