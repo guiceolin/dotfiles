@@ -1,0 +1,37 @@
+# vim:ft=zsh
+
+local remote_plugins_dir=$DOTFILES/.remote_plugins
+
+local flag_help flag_verbose flag_list
+local usage=(
+    "dotfiles remote [-h|--help]"
+    "dotfiles remote [-l|--list]"
+    "dotfiles remote [-v|--verbose] plugin_name"
+  )
+
+zmodload zsh/zutil
+zparseopts -D -F -K -- \
+  {h,-help}=flag_help \
+  {l,-list}=flag_list \
+  {v,-verbose}=flag_verbose || return 1
+
+[[ -z "$flag_help" ]] || { print -l $usage && return }
+
+### List option
+if [[ -v flag_list ]]; then
+  for d in $remote_plugins_dir/*(N); do
+    echo "$d:t"
+  done
+  return 0
+fi
+
+### No plugin given
+if [ $# -lt 1 ]; then
+  print -l $usage
+  return -1
+fi
+
+### Plugin Given
+pushd $remote_plugins_dir
+git clone $1
+popd

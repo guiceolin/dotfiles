@@ -1,5 +1,5 @@
 # vim:ft=zsh
-autoload -Uz _dotfiles_plugin_enable
+autoload -Uz _dotfiles_plugin_enable _dotfiles_remote_install
 
 usage() {
   echo "USAGE: myscript COMMAND plugin"
@@ -15,9 +15,9 @@ case "$1" in
     return 0
     ;;
 
-  install)
+  remote)
     shift
-    install $1
+    _dotfiles_remote_install $0
     ;;
 
   *)
