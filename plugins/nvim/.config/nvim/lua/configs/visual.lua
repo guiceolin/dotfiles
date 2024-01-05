@@ -13,12 +13,5 @@ set softtabstop=2
 set expandtab
 set smartindent
 set autoindent
-
-"Colorscheme
-set background=dark
-
-let g:gruvbox_material_disable_italic_comment = 1
-let g:gruvbox_material_palette = 'original'
-let g:gruvbox_material_background = 'hard'
-colorscheme gruvbox-material
-]]
+set signcolumn=yes
+"]]
