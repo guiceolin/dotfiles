@@ -5,34 +5,42 @@ vim.o.termguicolors = true
 return {
   'nvim-tree/nvim-tree.lua',
   dependencies = { { 'nvim-tree/nvim-web-devicons' } },
-  opts = {
-    renderer = {
-      indent_markers = {
-        enable = true,
-        icons = {
-          corner = "└",
-          edge = "│",
-          item = "├",
-          bottom = "─",
-          none = " ",
+  config = function()
+    local opts = {
+      renderer = {
+        indent_markers = {
+          enable = true,
+          icons = {
+            corner = "└",
+            edge = "│",
+            item = "├",
+            bottom = "─",
+            none = " ",
+          },
         },
       },
-    },
-    diagnostics = {
-      icons = {
-        hint = "",
-        info = "",
-        warning = "",
-        error = "",
+      diagnostics = {
+        icons = {
+          hint = "",
+          info = "",
+          warning = "",
+          error = "",
+        },
       },
-    },
-    filesystem_watchers = {
-      ignore_dirs = { ".git", "node_modules", ".cache", "__pycache__" },
-    },
-    actions = {
-      open_file = {
-        quit_on_open = true,
+      filesystem_watchers = {
+        ignore_dirs = { ".git", "node_modules", ".cache", "__pycache__" },
       },
-    },
-  }
+      actions = {
+        open_file = {
+          quit_on_open = true,
+        },
+      },
+    }
+
+    require('nvim-tree').setup(opts)
+
+    local api = require('nvim-tree.api')
+    vim.keymap.set('n', '<leader>p', api.tree.toggle, {})
+  end
+
 }
