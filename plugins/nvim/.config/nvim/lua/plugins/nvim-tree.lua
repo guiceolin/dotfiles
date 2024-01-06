@@ -39,8 +39,7 @@ return {
 
     require('nvim-tree').setup(opts)
 
-    local api = require('nvim-tree.api')
-    vim.keymap.set('n', '<leader>p', api.tree.toggle, {})
+    require('configs.keymaps').nvimtree()
   end
 
 }
