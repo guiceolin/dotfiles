@@ -17,7 +17,7 @@ local definition = {
 }
 
 local winbar = {
-  enable = false,
+  enable = true,
   folder_level = 1,
   show_file = true,
   separator = '  ',
@@ -34,7 +34,7 @@ local diagnostic = {
 }
 
 local hover = {
-  max_width = 0.5,
+  max_width = 0.9,
 }
 
 return {
@@ -50,6 +50,8 @@ return {
       diagnostic = diagnostic,
       hover = hover,
     }
+
+    require('configs.keymaps').lspsaga()
 
   end,
   dependencies = {

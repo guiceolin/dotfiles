@@ -23,5 +23,15 @@ function M.nvimtree()
   keymap(n, '<leader>p', api.tree.toggle, default_opts)
 end
 
-return M
+function M.lspsaga()
+  keymap(n, 'K', '<cmd>Lspsaga hover_doc<CR>', default_opts)
+  keymap(n_v, 'ca', '<Cmd>Lspsaga code_action<CR>', default_opts)
+  keymap(n_v, 'RR', '<Cmd>Lspsaga rename<CR>', default_opts)
+  keymap(n, 'gd', '<Cmd>Lspsaga peek_definition<CR>', default_opts)
+  keymap(n, 'gh', '<Cmd>Lspsaga hover_doc<CR>', default_opts)
+  keymap(n, 'gf', '<Cmd>Lspsaga goto_definition<CR>zz', default_opts)
+  keymap(n, 'e', '<Cmd>Lspsaga show_line_diagnostics ++unfocus<CR>', default_opts)
+  keymap(n, '<leader>o', '<Cmd>Lspsaga outline<CR>', default_opts)
+end
 
+return M
