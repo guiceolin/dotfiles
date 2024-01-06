@@ -1,16 +1,12 @@
 return {
   {
-    'sainnhe/gruvbox-material',
+    'AlexvZyl/nordic.nvim',
+    lazy = false,
+    priority = 1000,
     config = function()
+      require 'nordic' .load()
 
-      vim.cmd [[
-      set background=dark
-
-      let g:gruvbox_material_disable_italic_comment = 1
-      let g:gruvbox_material_palette = 'original'
-      let g:gruvbox_material_background = 'hard'
-      colorscheme gruvbox-material
-      ]]
+      vim.cmd.colorscheme 'nordic'
     end
   },
   {
@@ -18,7 +14,7 @@ return {
     config = function()
       require('lualine').setup {
         options = {
-          theme  = 'gruvbox-material',
+          theme  = 'nordic',
         },
       }
     end
