@@ -14,8 +14,8 @@ function M.telescope()
   keymap(n, '<leader>t', builtin.find_files, default_opts)
   keymap(n, '<leader>/', builtin.live_grep, default_opts)
   keymap(n, '<leader>b', builtin.buffers, default_opts)
-  keymap(n, '?',         builtin.keymaps, default_opts)
-
+  keymap(n, 'gr', '<Cmd>Telescope lsp_references<CR>', default_opts)
+  keymap(n, '?', builtin.keymaps, default_opts)
 end
 
 function M.nvimtree()
