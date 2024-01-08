@@ -45,9 +45,18 @@ if [ ! -d './eclipse.jdt.ls' ]; then
   cd eclipse.jdt.ls
   ./mvnw clean verify -DskipTests
   cd ..
+fi
+if [ ! -d './java-debug' ]; then
   git clone https://github.com/microsoft/java-debug
   cd java-debug
   ./mvnw clean install -DskipTests
+  cd ..
+fi
+if [ ! -d './vscode-java-test']; then
+  git clone https://github.com/microsoft/vscode-java-test.git
+  cd vscode-java-test
+  npm install
+  npm run build-plugin
   cd ..
 fi
 cd ..
