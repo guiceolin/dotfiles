@@ -23,14 +23,13 @@ if [[ -f "$DOTFILES/themes/$theme.theme.zsh" ]] ; then
 fi
 unset theme
 
-path=(
-  $HOME/.local/bin
-  $path
-)
-
-
 ### Extras
 EDITOR=nvim
 export GTK_IM_MODULE=cedilla
 autoload -Uz compinit
 compinit
+alias nvim-kickstart=NVIM_APPNAME="nvim-kickstart" nvim
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
