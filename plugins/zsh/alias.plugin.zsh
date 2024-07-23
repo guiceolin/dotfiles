@@ -1,7 +1,3 @@
-#### History substring search
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
-
 # Key bindings
 # Emacs mode
 bindkey -e
