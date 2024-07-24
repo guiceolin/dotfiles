@@ -9,3 +9,4 @@ bindkey  "^[[H"   beginning-of-line
 bindkey  "^[[F"   end-of-line
 
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
+alias nvim-kickstart=NVIM_APPNAME="nvim-kickstart" nvim

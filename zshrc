@@ -1,43 +1,47 @@
+# Use zprof if ZSH_DEBUGRC=1
+# This is used to test initializing time for this zshrc
+# To debug, just start new shell with ZSH_DEBUGRC setted, aka:
+# 
+# $ time ZSH_DEBUGRC=1 zsh -i -c exit
+#
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zmodload zsh/zprof
 fi
 
 source $DOTFILES/lib/lazy_load.zsh
 
-#### Source Remote plugins
-for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh(N); do
-  source $file
-done
-
-## Source plugins
+## Source enabled plugins
+# To enable a plugin, just synlink it to $DOTFILES_CONFIG/enabled/
+# E.g.:
+#
+# $ ln -s $DOTFILES/plugins/zsh/ zsh
+#
 for file in $DOTFILES_CONFIG/enabled/***/*.plugin.zsh(N); do
   source $file
 done
 
-### THEMES
+# for security reason, we unload lazy load function
+# after our plugins are loaded.
+unfunction lazy_load
+
+#### Source Remote plugins
+#    TODO: make a better way to install and manage external plugins
+for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh(N); do
+  source $file
+done
+
+### Set theme
+# this theme is defined on $DOTFILES/themes/ folder.
+# guiceolin is the default theme. 
 zstyle :dotfiles:theme name guiceolin
 
 ### Local Overrides
+# Use this file to put your customization i.e. themes, alias, etc
 if [[ -f "$HOME/.zshrc.local" ]] ; then
   source "$HOME/.zshrc.local"
 fi
 
-local theme
-zstyle -s :dotfiles:theme name theme
-if [[ -f "$DOTFILES/themes/$theme.theme.zsh" ]] ; then
-  source "$DOTFILES/themes/$theme.theme.zsh"
-fi
-unset theme
-
-### Extras
-EDITOR=nvim
-export GTK_IM_MODULE=cedilla
-autoload -Uz compinit
-compinit
-alias nvim-kickstart=NVIM_APPNAME="nvim-kickstart" nvim
-
-unfunction lazy_load
-
+# end zprof 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi
