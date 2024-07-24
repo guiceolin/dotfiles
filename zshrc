@@ -38,10 +38,7 @@ if [[ -f "$HOME/.zshrc.local" ]] ; then
   source "$HOME/.zshrc.local"
 fi
 
-### Set theme
 # this theme is defined on $DOTFILES/themes/ folder.
-# guiceolin is the default theme. 
-zstyle :dotfiles:theme name guiceolin
 source $DOTFILES/lib/themes.zsh
 
 # end zprof 

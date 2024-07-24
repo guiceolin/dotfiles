@@ -1,0 +1,8 @@
+# This is a sample configuration file for dotfiles.
+# Copy this file to your $HOME and modify it to suit your needs.
+# This will be loaded after plugins, but before theme is loaded.
+
+# Theme
+# Set the theme to use.
+# Themes are located in $DOTFILES/themes
+zstyle :dotfiles:theme name guiceolin
