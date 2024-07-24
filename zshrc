@@ -8,6 +8,8 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zmodload zsh/zprof
 fi
 
+# Enable Lazy load to the plugins.
+# TODO: Put an exemple here
 source $DOTFILES/lib/lazy_load.zsh
 
 ## Source enabled plugins
@@ -30,16 +32,17 @@ for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh(N); do
   source $file
 done
 
-### Set theme
-# this theme is defined on $DOTFILES/themes/ folder.
-# guiceolin is the default theme. 
-zstyle :dotfiles:theme name guiceolin
-
 ### Local Overrides
 # Use this file to put your customization i.e. themes, alias, etc
 if [[ -f "$HOME/.zshrc.local" ]] ; then
   source "$HOME/.zshrc.local"
 fi
+
+### Set theme
+# this theme is defined on $DOTFILES/themes/ folder.
+# guiceolin is the default theme. 
+zstyle :dotfiles:theme name guiceolin
+source $DOTFILES/lib/themes.zsh
 
 # end zprof 
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
