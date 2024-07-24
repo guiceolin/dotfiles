@@ -1,3 +1,9 @@
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zmodload zsh/zprof
+fi
+
+source $DOTFILES/lib/lazy_load.zsh
+
 #### Source Remote plugins
 for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh(N); do
   source $file
@@ -30,6 +36,8 @@ autoload -Uz compinit
 compinit
 alias nvim-kickstart=NVIM_APPNAME="nvim-kickstart" nvim
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+unfunction lazy_load
+
+if [ -n "${ZSH_DEBUGRC+1}" ]; then
+    zprof
+fi
