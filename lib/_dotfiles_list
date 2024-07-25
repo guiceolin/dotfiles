@@ -1,0 +1,20 @@
+# vim:ft=zsh
+
+local plugins_dir=$DOTFILES/plugins
+local installed_plugins=$DOTFILES_CONFIG/enabled/
+
+is_plugin_installed() {
+  [[ -d $installed_plugins/$1 ]]
+}
+print -P "%F{green}Installed plugins:%f"
+for d in $installed_plugins/*; do
+  echo "$d:t"
+done
+
+print -P "\n%F{red}Available plugins:%f"
+for d in $plugins_dir/*; do
+  if ! is_plugin_installed "$d:t"; then
+    echo "$d:t"
+  fi
+done
+

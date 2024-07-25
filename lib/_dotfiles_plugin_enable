@@ -5,7 +5,6 @@ local plugins_dir=$DOTFILES/plugins
 local flag_help flag_verbose flag_list
 local usage=(
     "dotfiles enable [-h|--help]"
-    "dotfiles enable [-l|--list]"
     "dotfiles enable [-v|--verbose] plugin_name"
   )
 
@@ -16,15 +15,7 @@ zparseopts -D -F -K -- \
   {v,-verbose}=flag_verbose || return 1
 
 [[ -z "$flag_help" ]] || { print -l $usage && return }
-
-### List option
-if [[ -v flag_list ]]; then
-  for d in $plugins_dir/*; do
-    echo "$d:t"
-  done
-  return 0
-fi
-
+#
 ### No plugin given
 if [ $# -lt 1 ]; then
   print -l $usage
