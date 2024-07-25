@@ -18,9 +18,9 @@ autoload -U add-zsh-hook
 function theme_precmd() {
 
   if [[ -n $(git ls-files --other --exclude-standard 2> /dev/null) ]]; then
-    branch_format="(%F{81}%b%f%u%c%F{161}●%f)"
+    branch_format="(%F{81}%b%f %u%c%F{161}?%f)"
   else
-    branch_format="(%F{81}%b%f%u%c)"
+    branch_format="(%F{81}%b%f %u%c)"
   fi
 
   zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
@@ -28,20 +28,11 @@ function theme_precmd() {
   vcs_info 'prompt'
 }
 
-function _virtualenv_active() {
-  if [ ! -z "$VIRTUAL_ENV" ]; then
-    virtualenv=`basename "$VIRTUAL_ENV"`
-    python_version=`pyenv version-name`
-    echo -n "(\ue73c$python_version $virtualenv)"
-  fi
-}
-
 add-zsh-hook precmd theme_precmd
 
-local branch_format="(%F{81}%b%f%u%c)"
-local action_format="(%F{118}%a%f)"
-local unstaged_format="%F{166}●%f"
-local staged_format="%F{118}●%f"
+local action_format="(%F{yellow}%a%f)"
+local unstaged_format="%F{166}~%f"
+local staged_format="%F{118}+%f"
 
 # Set vcs_info parameters.
 zstyle ':vcs_info:*' enable bzr git hg svn
@@ -49,10 +40,8 @@ zstyle ':vcs_info:*:prompt:*' check-for-changes true
 zstyle ':vcs_info:*:prompt:*' unstagedstr "${unstaged_format}"
 zstyle ':vcs_info:*:prompt:*' stagedstr "${staged_format}"
 zstyle ':vcs_info:*:prompt:*' actionformats "${branch_format}${action_format}"
-zstyle ':vcs_info:*:prompt:*' formats "${branch_format}"
 zstyle ':vcs_info:*:prompt:*' nvcsformats   ""
 setopt prompt_subst
 
-PROMPT=""'%F{135}%n%f at %F{166}%m%f in %F{118}%~%f ${vcs_info_msg_0_}%F{022}$(_virtualenv_active)
+PROMPT=""'%F{135}%n%f at %F{166}%m%f in %F{118}%~%f ${vcs_info_msg_0_}%F{022}
 %F{015}$ '""
-#RPROMPT="%F{red}[$(rbenv version-name)]"
