@@ -1,8 +1,9 @@
 # vim:ft=zsh
 
 local plugins_dir=$DOTFILES/plugins
+local installed_plugins=$DOTFILES_CONFIG/enabled/
 
-local flag_help flag_verbose flag_list
+local flag_help flag_verbose
 local usage=(
     "dotfiles enable [-h|--help]"
     "dotfiles enable [-v|--verbose] plugin_name"
@@ -11,7 +12,6 @@ local usage=(
 zmodload zsh/zutil
 zparseopts -D -F -K -- \
   {h,-help}=flag_help \
-  {l,-list}=flag_list \
   {v,-verbose}=flag_verbose || return 1
 
 [[ -z "$flag_help" ]] || { print -l $usage && return }
@@ -28,11 +28,19 @@ local install_file=$plugin_dir/install.sh
 
 
 if [ -d $plugin_dir ]; then
+  if [ -e $installed_plugins/$1 ]; then
+    print "Plugin $1 already enabled"
+    return 0
+  fi
+
+  echo -n "Enabling plugin $1...   "
   ln -s $plugin_dir $DOTFILES_CONFIG/enabled/
+  echo "Done"
 
   if [ -e $install_file ]; then
-    print "Installing $1"
+    echo -n "Install script found. Running it...   "
     . $install_file
+    echo "%F{green}Done"
     return 0
   fi
 else

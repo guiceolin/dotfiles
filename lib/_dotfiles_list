@@ -4,17 +4,38 @@ local plugins_dir=$DOTFILES/plugins
 local installed_plugins=$DOTFILES_CONFIG/enabled/
 
 is_plugin_installed() {
-  [[ -d $installed_plugins/$1 ]]
+	[[ -d $installed_plugins/$1 ]]
 }
+
+check_if_git_repo() {
+	if [[ -d $1 ]]; then
+		pushd $1 > /dev/null
+		git rev-parse --is-inside-work-tree &> /dev/null
+		popd > /dev/null
+	fi
+}
+
+get_git_remote_url() {
+	if [[ -d $1/.git ]]; then
+		pushd $1 > /dev/null
+		git remote get-url origin
+		popd > /dev/null
+	fi
+}
+
 print -P "%F{green}Installed plugins:%f"
+local installed=()
 for d in $installed_plugins/*; do
-  echo "$d:t"
+	if check_if_git_repo "$d"; then
+		printf "%-30s %s\n" "$d:t" "$(get_git_remote_url $d)"
+	else
+		printf "%-30s\n" "$d:t"
+	fi
 done
 
 print -P "\n%F{red}Available plugins:%f"
 for d in $plugins_dir/*; do
-  if ! is_plugin_installed "$d:t"; then
-    echo "$d:t"
-  fi
+	if ! is_plugin_installed "$d:t"; then
+		echo "$d:t"
+	fi
 done
-
