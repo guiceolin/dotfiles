@@ -11,5 +11,7 @@ bindkey  "^[[F"   end-of-line
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
+bindkey ' ' magic-space
+
 alias grep="grep --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}"
 alias nvim-kickstart=NVIM_APPNAME="nvim-kickstart" nvim
