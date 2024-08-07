@@ -811,6 +811,20 @@ require('lazy').setup({
       auto_session_suppress_dirs = { '~/', '~/Projects', '~/Downloads', '/' },
     },
   },
+  {
+    "OXY2DEV/markview.nvim",
+    lazy = true,      -- Recommended
+    ft = "markdown", -- If you decide to lazy-load anyway
+
+    dependencies = {
+      -- You will not need this if you installed the
+      -- parsers manually
+      -- Or if the parsers are in your $RUNTIMEPATH
+      "nvim-treesitter/nvim-treesitter",
+
+      "nvim-tree/nvim-web-devicons"
+    }
+  },
 
   -- The following two comments only work if you have downloaded the kickstart repo, not just copy pasted the
   -- init.lua. If you want these files, they are in the repository, so you can just download them and
