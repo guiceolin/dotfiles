@@ -19,7 +19,8 @@ return {
 	},
 
 	font_size = 14.0,
-	font = wezterm.font("Cascadia Mono NF"),
+	-- font = wezterm.font("Caskaydia Mono NF"),
+	font = wezterm.font("CaskaydiaMono Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" }),
 	freetype_load_flags = "NO_HINTING",
 	-- dpi = 96.0,
 }
