@@ -6,3 +6,5 @@ export DOTFILES=$HOME/dotfiles
 path=($HOME/.local/bin $path)
 fpath=(${DOTFILES}/lib $fpath)
 autoload -Uz dotfiles
+
+eval "$(/opt/homebrew/bin/brew shellenv)"
