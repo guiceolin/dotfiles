@@ -1,0 +1,30 @@
+# vim:ft=zsh
+
+# this file is a zsh function that receive an plugin name, located at $DOTFILES/plugins/, as paramenter, and check if it is linked on enabled folder, then if it is, the function links it to ~/.config. if there is already a file with the same name, it will be backed up adding .old to filename. if not enabled, print a message and return 1, if plugin doesnt exists, print error e return 1.
+
+if [ -z "$1" ]; then
+	echo "Usage: _dotfiles_link_to_config <plugin_name>"
+	return 1
+fi
+local plugin_name=$1
+local plugin_path="$DOTFILES/plugins/$plugin_name"
+local enabled_path="$DOTFILES_CONFIG/enabled/$plugin_name"
+local config_path="$HOME/.config/$plugin_name"
+if [ ! -d "$plugin_path" ]; then
+	echo "Plugin $plugin_name not found."
+	return 1
+fi
+if [ ! -d "$enabled_path" ]; then
+	echo "Plugin $plugin_name is not enabled."
+	return 1
+fi
+if [ -d "$config_path" ]; then
+	echo "Plugin $plugin_name already linked to ~/.config."
+	return 0
+fi
+if [ -e "$config_path" ]; then
+	mv "$config_path" "$config_path.old"
+fi
+ln -s "$enabled_path" "$config_path"
+echo "Plugin $plugin_name linked to ~/.config."
+return 0
