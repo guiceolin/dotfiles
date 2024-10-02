@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh 
+autoload -Uz _dotfiles_link_to_config
 
-if [[ -f ~/.tmux.conf ]]; then
-  mv ~/.tmux.conf ~/.tmux.conf.old
-fi
-ln -sf $DOTFILES/plugins/tmux/.tmux.conf $HOME/.tmux.conf
+_dotfiles_link_to_config tmux
+
