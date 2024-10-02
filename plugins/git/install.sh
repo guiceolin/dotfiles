@@ -1,6 +1,10 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env zsh --login
 
-set -x
+autoload -Uz _dotfiles_link_to_config
+
+_dotfiles_link_to_config git
+
+# set -x
 #
 # ln -sf $DOTFILES/plugins/git/.config/git ~/.config
 # mkdir -p $DOTFILES/plugins/git/bin
