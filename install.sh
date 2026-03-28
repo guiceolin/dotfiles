@@ -14,3 +14,13 @@ ln -sf $PWD/zprofile $HOME/.zprofile
 
 mkdir -p $HOME/.local/bin
 mkdir -p $HOME/.config/dotfiles/enabled/
+
+# Local overrides
+if [[ ! -f $HOME/.zshrc.local ]]; then
+  echo ""
+  echo "Note: ~/.zshrc.local does not exist."
+  echo "Copy $PWD/zshrc.local to ~/.zshrc.local to set your theme and local customizations:"
+  echo ""
+  echo "  cp $PWD/zshrc.local ~/.zshrc.local"
+  echo ""
+fi
