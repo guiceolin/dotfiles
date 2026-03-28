@@ -7,4 +7,6 @@ elif [ -x "$(command -v batcat)" ]; then
   export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
   alias bat="batcat"
   alias cat="batcat"
+else
+  echo "[dotfiles] bat is not installed. Install it to enable syntax highlighting."
 fi
