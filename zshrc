@@ -21,8 +21,15 @@ source $DOTFILES/lib/lazy_load.zsh
 #
 # $ ln -s $DOTFILES/plugins/zsh/ zsh
 #
+# DOTFILES_LOADED_PLUGINS is exported so subshells (e.g. tmux panes) inherit
+# the list and skip re-sourcing plugins that are already loaded.
+typeset -gx DOTFILES_LOADED_PLUGINS
 for file in $DOTFILES_CONFIG/enabled/***/*.plugin.zsh(N); do
-  source $file
+  local plugin_name=${file:h:t}
+  if [[ ":$DOTFILES_LOADED_PLUGINS:" != *":$plugin_name:"* ]]; then
+    source $file
+    DOTFILES_LOADED_PLUGINS="${DOTFILES_LOADED_PLUGINS:+$DOTFILES_LOADED_PLUGINS:}$plugin_name"
+  fi
 done
 
 # for security reason, we unload lazy load function
