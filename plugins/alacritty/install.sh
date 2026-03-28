@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+autoload -Uz _dotfiles_link_to_config
 
-mkdir -p ~/.config
-if [[ -f ~/.config/alacritty ]]; then
-  mv ~/.config/alacritty ~/.config/alacritty.old
-fi
-ln -sf $(realpath ".config/alacritty") ~/.config
+_dotfiles_link_to_config alacritty
