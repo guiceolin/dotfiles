@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
+autoload -Uz _dotfiles_link_to_config
 
-mkdir -p ~/.config
-if [[ -f ~/.config/nvim ]]; then
-  mv ~/.config/nvim ~/.config/nvim.old
-fi
-ln -sf $DOTFILES/plugins/nvim ~/.config
+_dotfiles_link_to_config nvim
