@@ -1,3 +1,6 @@
+# Ensure zprofile is loaded even in non-login shells (common on Linux/Fedora)
+[[ -z "$DOTFILES" ]] && source "${ZDOTDIR:-$HOME}/.zprofile"
+
 # Use zprof if ZSH_DEBUGRC=1
 # This is used to test initializing time for this zshrc
 # To debug, just start new shell with ZSH_DEBUGRC setted, aka:
