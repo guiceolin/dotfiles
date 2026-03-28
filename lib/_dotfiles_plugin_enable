@@ -41,8 +41,12 @@ if [ -d $plugin_dir ]; then
     echo -n "Install script found. Running it...   "
     . $install_file
     echo "%F{green}Done"
-    return 0
   fi
+
+  for file in $DOTFILES_CONFIG/enabled/$1/*.plugin.zsh(N); do
+    source $file
+    DOTFILES_LOADED_PLUGINS="${DOTFILES_LOADED_PLUGINS:+$DOTFILES_LOADED_PLUGINS:}$1"
+  done
 else
   print "Plugin $1 Not Found"
   return -2
