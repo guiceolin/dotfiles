@@ -11,6 +11,10 @@ if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zmodload zsh/zprof
 fi
 
+# Required for the plugin loader glob (***/*.plugin.zsh) and general pattern matching.
+# Note: this enables #, ~ and ^ as special glob characters in the shell.
+setopt extendedglob
+
 # Enable Lazy load to the plugins.
 # TODO: Put an exemple here
 source $DOTFILES/lib/lazy_load.zsh

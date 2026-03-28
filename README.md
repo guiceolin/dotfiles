@@ -10,6 +10,10 @@ My very own dotfiles repository! Whoa!
 
 Remember to CHANGE git configs as this script sets them up with my personal configs (name, username and email)
     
+## Shell behavior
+
+`extendedglob` is enabled globally in `zshrc` before any plugins are loaded. This is required by the plugin loader and enables advanced glob patterns (`#`, `~`, `^`) in the shell. Keep this in mind if you use those characters literally in commands.
+
 ## Plugins
 
 Plugins live in `plugins/<name>/` and follow these conventions:
