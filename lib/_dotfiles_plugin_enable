@@ -43,10 +43,11 @@ if [ -d $plugin_dir ]; then
     echo "%F{green}Done"
   fi
 
-  for file in $DOTFILES_CONFIG/enabled/$1/*.plugin.zsh(N); do
-    source $file
+  local plugin_file=$DOTFILES_CONFIG/enabled/$1/$1.plugin.zsh
+  if [[ -f $plugin_file ]]; then
+    source $plugin_file
     DOTFILES_LOADED_PLUGINS="${DOTFILES_LOADED_PLUGINS:+$DOTFILES_LOADED_PLUGINS:}$1"
-  done
+  fi
 else
   print "Plugin $1 Not Found"
   return -2
