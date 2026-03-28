@@ -1,20 +1,31 @@
 #!/usr/bin/env bash
-# Install Mononoki font
-mkdir /tmp/fonts
-cd /tmp/fonts
+set -e
 
-# loop throught array
-for font_name in mononoki CascadiaMono
-do
-	curl -OL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$font_name.zip"
-	unzip "$font_name".zip
-done 
+fonts=(mononoki CascadiaMono)
 
-# TODO Check OS before cp fonts
-mkdir -p ~/Library/Fonts/
-cp ./*.ttf ~/Library/Fonts/
-mkdir -p ~/.local/share/fonts/
-cp ./*.ttf ~/.local/share/fonts/
-sudo fc-cache -vf ~/.local/share/fonts
+case "$(uname -s)" in
+  Darwin) font_dir="$HOME/Library/Fonts" ;;
+  Linux)  font_dir="$HOME/.local/share/fonts" ;;
+  *)
+    echo "Unsupported OS: $(uname -s)"
+    exit 1
+    ;;
+esac
 
-cd - && rm -rf /tmp/fonts
+tmp_dir=$(mktemp -d)
+trap 'rm -rf "$tmp_dir"' EXIT
+
+mkdir -p "$font_dir"
+
+for font_name in "${fonts[@]}"; do
+  echo "Downloading $font_name..."
+  curl -fsSL "https://github.com/ryanoasis/nerd-fonts/releases/latest/download/$font_name.zip" -o "$tmp_dir/$font_name.zip"
+  unzip -o "$tmp_dir/$font_name.zip" '*.ttf' -d "$tmp_dir/$font_name"
+  cp "$tmp_dir/$font_name"/*.ttf "$font_dir/"
+done
+
+if command -v fc-cache &>/dev/null; then
+  fc-cache -f "$font_dir"
+fi
+
+echo "Fonts installed to $font_dir"
