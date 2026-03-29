@@ -103,3 +103,5 @@ Temporary Items
 tags
 .flake8
 .venv
+
+**/.claude/settings.local.json
