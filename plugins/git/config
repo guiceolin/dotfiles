@@ -6,6 +6,7 @@
 
 [core]
   autocrlf = false
+  hooksPath = .githooks
 
 [branch]
   autosetupmerge = true
