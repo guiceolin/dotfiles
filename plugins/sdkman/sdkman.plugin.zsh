@@ -1,3 +1,5 @@
+(( $+functions[lazy_load] )) || source "$DOTFILES/lib/lazy_load.zsh"
+
 lazy_load 'sdk' 'kotlin' 'gradle' 'mvn' 'java' <<- 'EOF'
 	#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 	export SDKMAN_DIR="${HOME}/.sdkman"
