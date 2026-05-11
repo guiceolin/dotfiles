@@ -1,1 +1,1 @@
-ln -sf $(realpath "bin/venv") ~/.local/bin
+ln -sf "$(dirname "$0")/bin/venv" ~/.local/bin/venv
