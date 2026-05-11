@@ -45,3 +45,5 @@
 #     user = youruser
 [include]
   path = ~/.gitconfig.user
+[init]
+	defaultBranch = main
