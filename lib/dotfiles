@@ -21,7 +21,7 @@ case "$1" in
 
   remote)
     shift
-    _dotfiles_remote_install $0
+    _dotfiles_remote_install $@
     ;;
 
   *)

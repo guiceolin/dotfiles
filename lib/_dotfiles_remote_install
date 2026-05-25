@@ -2,36 +2,58 @@
 
 local remote_plugins_dir=$DOTFILES/.remote_plugins
 
-local flag_help flag_verbose flag_list
-local usage=(
-    "dotfiles remote [-h|--help]"
-    "dotfiles remote [-l|--list]"
-    "dotfiles remote [-v|--verbose] plugin_name"
-  )
+_remote_usage() {
+  print -l \
+    "dotfiles remote [-h|--help]" \
+    "dotfiles remote [-l|--list]" \
+    "dotfiles remote reload          # re-source cloned plugins in current shell" \
+    "dotfiles remote sync            # clone missing plugins + reload" \
+    "dotfiles remote <git-url>       # clone a single URL"
+}
 
-zmodload zsh/zutil
-zparseopts -D -F -K -- \
-  {h,-help}=flag_help \
-  {l,-list}=flag_list \
-  {v,-verbose}=flag_verbose || return 1
-
-[[ -z "$flag_help" ]] || { print -l $usage && return }
-
-### List option
-if [[ -v flag_list ]]; then
+_remote_list() {
   for d in $remote_plugins_dir/*(N); do
     echo "$d:t"
   done
-  return 0
-fi
+}
 
-### No plugin given
-if [ $# -lt 1 ]; then
-  print -l $usage
-  return -1
-fi
+_remote_reload() {
+  local count=0
+  for file in $remote_plugins_dir/**/*.plugin.zsh(N); do
+    source "$file"
+    (( count++ ))
+  done
+  echo "[dotfiles] reloaded $count remote plugin(s)"
+}
 
-### Plugin Given
-pushd $remote_plugins_dir
-git clone $1
-popd
+_remote_sync() {
+  local cloned=0
+  for conf in $DOTFILES/plugins/*/remote_plugins(N); do
+    while IFS= read -r url || [[ -n "$url" ]]; do
+      [[ "$url" =~ '^[[:space:]]*#' || -z "${url// }" ]] && continue
+      local name="${url:t}"
+      if [[ ! -d "$remote_plugins_dir/$name" ]]; then
+        echo "[dotfiles] cloning $name..."
+        git clone "$url" "$remote_plugins_dir/$name"
+        (( cloned++ ))
+      fi
+    done < "$conf"
+  done
+  [[ $cloned -eq 0 ]] && echo "[dotfiles] nothing new to clone"
+  _remote_reload
+}
+
+### Dispatch
+
+local cmd="${1:-}"
+shift 2>/dev/null
+
+case "$cmd" in
+  -h|--help)     _remote_usage ;;
+  -l|--list)     _remote_list ;;
+  reload)        _remote_reload ;;
+  sync)          _remote_sync ;;
+  "")            _remote_usage; return 1 ;;
+  http*|git*)    git clone "$cmd" "$remote_plugins_dir/${cmd:t}" ;;
+  *)             echo "[dotfiles] remote: unknown command '$cmd'"; _remote_usage; return 1 ;;
+esac

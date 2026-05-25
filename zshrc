@@ -42,7 +42,7 @@ unfunction lazy_load
 
 #### Source Remote plugins
 #    TODO: make a better way to install and manage external plugins
-for file in $HOME/dotfiles/.remote_plugins/**/*.plugin.zsh(N); do
+for file in $DOTFILES/.remote_plugins/**/*.plugin.zsh(N); do
   source $file
 done
 
