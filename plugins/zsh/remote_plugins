@@ -1,0 +1,10 @@
+# ZSH remote plugins
+# One git URL per line. Lines starting with # are ignored.
+# These are cloned into $DOTFILES/.remote_plugins/ when running `dotfiles enable zsh`.
+#
+# NOTE: zsh-completions is intentionally omitted — it must be added to $fpath
+# before compinit runs, but remote plugins are sourced after.
+
+https://github.com/zsh-users/zsh-autosuggestions
+https://github.com/zsh-users/zsh-syntax-highlighting
+https://github.com/zsh-users/zsh-history-substring-search
