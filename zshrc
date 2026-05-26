@@ -1,5 +1,9 @@
-# Ensure zprofile is loaded even in non-login shells (common on Linux/Fedora)
+# Guard: covers the rare case of an interactive shell with no login shell parent (e.g. zsh -i)
 [[ -z "$DOTFILES" ]] && source "${ZDOTDIR:-$HOME}/.zprofile"
+
+# fpath and autoload must run in every interactive shell — they are not inherited
+fpath=($DOTFILES/lib $fpath)
+autoload -Uz dotfiles
 
 # Use zprof if ZSH_DEBUGRC=1
 # This is used to test initializing time for this zshrc
