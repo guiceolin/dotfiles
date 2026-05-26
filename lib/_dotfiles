@@ -1,0 +1,68 @@
+#compdef dotfiles
+
+_dotfiles() {
+  local context state state_descr line
+  typeset -A opt_args
+
+  _arguments -C \
+    {-h,--help}'[show help]' \
+    '1: :->command' \
+    '*:: :->args' \
+    && return 0
+
+  case $state in
+    command)
+      local commands=(
+        'list:list installed and available plugins'
+        'enable:enable a plugin (symlink + install + source)'
+        'remote:manage remote plugins'
+        'help:show help'
+      )
+      _describe 'command' commands
+      ;;
+
+    args)
+      case $line[1] in
+        enable)
+          _arguments \
+            {-h,--help}'[show help]' \
+            {-v,--verbose}'[show step-by-step details]' \
+            '*: :_dotfiles_available_plugins'
+          ;;
+
+        remote)
+          _arguments \
+            {-h,--help}'[show help]' \
+            {-l,--list}'[list remote plugins]' \
+            '1: :->subcmd' \
+            && return 0
+
+          case $state in
+            subcmd)
+              local subcmds=(
+                'reload:re-source cloned plugins in current shell'
+                'sync:clone missing plugins and reload'
+              )
+              _describe 'subcommand' subcmds
+              ;;
+          esac
+          ;;
+      esac
+      ;;
+  esac
+}
+
+_dotfiles_available_plugins() {
+  local plugins_dir=$DOTFILES/plugins
+  local enabled_dir=$DOTFILES_CONFIG/enabled
+  local -a available
+
+  for d in $plugins_dir/*(N/); do
+    local name=${d:t}
+    [[ ! -e $enabled_dir/$name ]] && available+=($name)
+  done
+
+  _describe 'plugin' available
+}
+
+_dotfiles
