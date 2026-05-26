@@ -15,40 +15,51 @@ zparseopts -D -F -K -- \
   {v,-verbose}=flag_verbose || return 1
 
 [[ -z "$flag_help" ]] || { print -l $usage && return }
-#
-### No plugin given
+
 if [ $# -lt 1 ]; then
   print -l $usage
-  return -1
+  return 1
 fi
 
-### Plugin Given
-local plugin_dir=$plugins_dir/$1
+local verbose=${#flag_verbose}
+
+_log()  { echo "  $1"; }
+_vlog() { [[ $verbose -gt 0 ]] && echo "  $1"; }
+
+### No plugin given
+local plugin_name=$1
+local plugin_dir=$plugins_dir/$plugin_name
 local install_file=$plugin_dir/install.sh
+local symlink=$installed_plugins/$plugin_name
+local plugin_file=$symlink/$plugin_name.plugin.zsh
 
-
-if [ -d $plugin_dir ]; then
-  if [ -e $installed_plugins/$1 ]; then
-    print "Plugin $1 already enabled"
-    return 0
-  fi
-
-  echo -n "Enabling plugin $1...   "
-  ln -s $plugin_dir $DOTFILES_CONFIG/enabled/
-  echo "Done"
-
-  if [ -e $install_file ]; then
-    echo -n "Install script found. Running it...   "
-    . $install_file
-    echo "%F{green}Done"
-  fi
-
-  local plugin_file=$DOTFILES_CONFIG/enabled/$1/$1.plugin.zsh
-  if [[ -f $plugin_file ]]; then
-    source $plugin_file
-    DOTFILES_LOADED_PLUGINS="${DOTFILES_LOADED_PLUGINS:+$DOTFILES_LOADED_PLUGINS:}$1"
-  fi
-else
-  print "Plugin $1 Not Found"
-  return -2
+if [[ ! -d $plugin_dir ]]; then
+  echo "dotfiles: plugin '$plugin_name' not found in $plugins_dir"
+  return 1
 fi
+
+if [[ -e $symlink ]]; then
+  echo "dotfiles: plugin '$plugin_name' is already enabled"
+  return 0
+fi
+
+echo "Enabling plugin $plugin_name..."
+
+_vlog "creating symlink: $symlink -> $plugin_dir"
+ln -s $plugin_dir $symlink
+_log "symlink created"
+
+if [[ -e $install_file ]]; then
+  _vlog "running install script: $install_file"
+  . $install_file
+  _log "install script done"
+fi
+
+if [[ -f $plugin_file ]]; then
+  _vlog "sourcing: $plugin_file"
+  source $plugin_file
+  DOTFILES_LOADED_PLUGINS="${DOTFILES_LOADED_PLUGINS:+$DOTFILES_LOADED_PLUGINS:}$plugin_name"
+  _log "plugin loaded"
+fi
+
+echo "Done"
