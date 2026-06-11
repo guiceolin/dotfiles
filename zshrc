@@ -1,14 +1,12 @@
-# Guard: covers the rare case of an interactive shell with no login shell parent (e.g. zsh -i)
-[[ -z "$DOTFILES" ]] && source "${ZDOTDIR:-$HOME}/.zprofile"
+# vim: ft=zsh
 
 # fpath and autoload must run in every interactive shell — they are not inherited
 fpath=($DOTFILES/lib $fpath)
 autoload -Uz dotfiles
 
 # Use zprof if ZSH_DEBUGRC=1
-# This is used to test initializing time for this zshrc
 # To debug, just start new shell with ZSH_DEBUGRC setted, aka:
-# 
+#
 # $ time ZSH_DEBUGRC=1 zsh -i -c exit
 #
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
@@ -19,12 +17,8 @@ fi
 # Note: this enables #, ~ and ^ as special glob characters in the shell.
 setopt extendedglob
 
-# Enable Lazy load to the plugins.
-# TODO: Put an exemple here
-source $DOTFILES/lib/lazy_load.zsh
-
 ## Source enabled plugins
-# To enable a plugin, just synlink it to $DOTFILES_CONFIG/enabled/
+# To enable a plugin, just symlink it to $DOTFILES_CONFIG/enabled/
 # E.g.:
 #
 # $ ln -s $DOTFILES/plugins/zsh/ zsh
@@ -40,12 +34,7 @@ for file in $DOTFILES_CONFIG/enabled/***/*.plugin.zsh(N); do
   fi
 done
 
-# for security reason, we unload lazy load function
-# after our plugins are loaded.
-unfunction lazy_load
-
 #### Source Remote plugins
-#    TODO: make a better way to install and manage external plugins
 for file in $DOTFILES/.remote_plugins/**/*.plugin.zsh(N); do
   source $file
 done
@@ -59,7 +48,7 @@ fi
 # this theme is defined on $DOTFILES/themes/ folder.
 source $DOTFILES/lib/themes.zsh
 
-# end zprof 
+# end zprof
 if [ -n "${ZSH_DEBUGRC+1}" ]; then
     zprof
 fi

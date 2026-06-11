@@ -1,5 +1,11 @@
 #!/usr/bin/env zsh
 
+# Link zshenv to $HOME
+if [[ -f ~/.zshenv ]]; then
+  mv ~/.zshenv ~/.zshenv.old
+fi
+ln -sf $PWD/zshenv $HOME/.zshenv
+
 # Link zshrc to $HOME
 if [[ -f ~/.zshrc ]]; then
   mv ~/.zshrc ~/.zshrc.old
