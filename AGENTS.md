@@ -4,11 +4,20 @@
 
 ```
 plugins/<name>/
-  <name>.plugin.zsh   # sourced automatically when plugin is enabled
+  <name>.env.zsh      # PATH and env exports for all shells (optional)
+  <name>.plugin.zsh   # interactive shell setup: eval, aliases, completions (optional)
   install.sh          # installs the dependency (optional)
 ```
 
 Enabled plugins are symlinked into `~/.config/dotfiles/enabled/`.
+
+`NAME.env.zsh` — loaded by `.zshenv` for every shell (Claude Code, scripts, cron, terminal).
+Rules: only `export` and `path=(...)`. No `eval`, no subprocesses.
+
+`NAME.plugin.zsh` — loaded by `.zshrc` for interactive shells only.
+Use for `eval "$(tool init -)"`, aliases, completions, and hooks.
+
+Create `NAME.env.zsh` only when the plugin adds binaries to `PATH`.
 
 ## Commands
 
@@ -23,17 +32,10 @@ dotfiles remote --list     # list remote plugins
 
 ## Creating a plugin
 
-1. Create `plugins/<name>/<name>.plugin.zsh`
-2. Optionally add `plugins/<name>/install.sh`
-3. Run `dotfiles enable <name>`
-
-For slow-loading tools, use lazy load:
-
-```zsh
-lazy_load 'cmd1' 'cmd2' <<- 'EOF'
-  # init code
-EOF
-```
+1. Create `plugins/<name>/<name>.plugin.zsh` (interactive setup)
+2. Optionally create `plugins/<name>/<name>.env.zsh` (if the plugin needs `PATH` additions)
+3. Optionally add `plugins/<name>/install.sh`
+4. Run `dotfiles enable <name>`
 
 ## Commits
 
