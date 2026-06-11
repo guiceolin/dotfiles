@@ -28,3 +28,23 @@ for name in zshenv zshrc zprofile; do
     _log "[updated] .$name"
   fi
 done
+
+# 2. Remote plugins
+remote_dir=$DOTFILES/.remote_plugins
+if [[ -d $remote_dir ]]; then
+  print "==> remote plugins"
+  for dir in $remote_dir/*(N/); do
+    name=${dir:t}
+    before=$(git -C $dir rev-parse HEAD 2>/dev/null)
+    if ! git -C $dir pull --quiet 2>/dev/null; then
+      _warn "$name: git pull failed"
+      continue
+    fi
+    after=$(git -C $dir rev-parse HEAD 2>/dev/null)
+    if [[ $before != $after ]]; then
+      _log "[updated] $name"
+    else
+      _vlog "[ok] $name"
+    fi
+  done
+fi
