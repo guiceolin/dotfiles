@@ -48,3 +48,16 @@ if [[ -d $remote_dir ]]; then
     fi
   done
 fi
+
+# 3. Broken symlinks
+print "==> enabled plugins"
+broken=0
+for link in $DOTFILES_CONFIG/enabled/*(N); do
+  if [[ -L $link && ! -e $link ]]; then
+    _warn "broken symlink: ${link:t}"
+    (( broken++ ))
+  fi
+done
+(( broken == 0 )) && _vlog "[ok] no broken symlinks"
+
+print "Done."
