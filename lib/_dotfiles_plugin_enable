@@ -55,6 +55,13 @@ if [[ -e $install_file ]]; then
   _log "install script done"
 fi
 
+local env_file=$symlink/$plugin_name.env.zsh
+if [[ -f $env_file ]]; then
+  _vlog "sourcing env: $env_file"
+  source $env_file
+  _log "env loaded"
+fi
+
 if [[ -f $plugin_file ]]; then
   _vlog "sourcing: $plugin_file"
   source $plugin_file
